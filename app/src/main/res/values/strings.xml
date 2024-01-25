@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">FitnesLife</string>
+    <string name="title_register">Registrarse</string>
+    <string name="title_name">Introduce tu nombre:</string>
+    <string name="title_email">Introduce tu email</string>
+    <string name="title_passwordVeri">Introduce tu contraseña</string>
+    <string name="title_password">Crea una contraseña:</string>
+    <string name="title_rptPassword">Repetir contraseña:</string>
+    <string name="title_logIn">Iniciar sesión</string>
+    <string name="other">Or</string>
+    <string name="hint_input">"esto es un texto editable</string>
+    <string name="home_welcome">Bienvenido!</string>
+    <string name="home_title">Comienza tu camino en la vida fitnes</string>
+    <string name="title_card1_home">Explorar</string>
+    <string name="paragraph_card1_home">Explora los diferentes ejercicios para cada parte muscular</string>
+    <string name="title_card2_home">Entrenamientos</string>
+    <string name="paragraph_card2_home">Crea tu propia rutina de entrenamientos</string>
+    <string name="text_card1">Explora los ejercicios para  cada nivel. </string>
+    <string name="text_card2">Crear rutina</string>
+    <string name="Button_card1">Ver más</string>
+    <string name="Button_card2">Empezar</string>
+</resources>
