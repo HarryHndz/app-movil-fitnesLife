@@ -4,49 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.RegistroActivity"
-    android:background="@color/background_app">
+    android:background="@color/background_app"
+    tools:context=".activities.RegistroActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/TxtGeneral"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_register"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:textSize="45sp"
+            android:text="@string/title_register"
             android:textColor="@color/black"
-            />
+            android:textSize="45sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:layout_width="wrap_content"
             android:id="@+id/textName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_name"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey_low"
-            app:cardCornerRadius="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp">
+            android:layout_marginBottom="17dp"
+            app:cardBackgroundColor="@color/grey_low"
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,14 +60,13 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/EditName"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:id="@+id/EditName"
-                    android:textColor="@color/background_app"
                     android:background="@android:color/transparent"
                     android:maxLines="1"
                     android:singleLine="true"
-                    />
+                    android:textColor="@color/background_app" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -80,16 +77,15 @@
             android:layout_height="wrap_content"
             android:text="@string/title_email"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            />
+            android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey_low"
-            app:cardCornerRadius="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp">
+            android:layout_marginBottom="17dp"
+            app:cardBackgroundColor="@color/grey_low"
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,14 +101,13 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/EditEmail"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:inputType="textEmailAddress"
-                    android:id="@+id/EditEmail"
-                    android:textColor="@color/background_app"
                     android:background="@android:color/transparent"
+                    android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    />
+                    android:textColor="@color/background_app" />
 
             </LinearLayout>
 
@@ -120,21 +115,20 @@
         </androidx.cardview.widget.CardView>
 
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/title_password"
             android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey_low"
-            app:cardCornerRadius="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp">
+            android:layout_marginBottom="17dp"
+            app:cardBackgroundColor="@color/grey_low"
+            app:cardCornerRadius="10dp">
 
 
             <LinearLayout
@@ -151,14 +145,13 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/EditPassword"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:inputType="textPassword"
-                    android:id="@+id/EditPassword"
-                    android:textColor="@color/background_app"
                     android:background="@android:color/transparent"
+                    android:inputType="textPassword"
                     android:maxLines="1"
-                    />
+                    android:textColor="@color/background_app" />
 
             </LinearLayout>
 
@@ -171,15 +164,15 @@
             android:layout_height="wrap_content"
             android:text="@string/title_rptPassword"
             android:textColor="@color/black"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            app:cardBackgroundColor="@color/grey_low"
-            app:cardCornerRadius="10dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp">
+            android:layout_marginBottom="17dp"
+            app:cardBackgroundColor="@color/grey_low"
+            app:cardCornerRadius="10dp">
 
 
             <LinearLayout
@@ -196,30 +189,28 @@
                 </ImageView>
 
                 <EditText
+                    android:id="@+id/EditRptPass"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:inputType="textPassword"
-                    android:id="@+id/EditRptPass"
-                    android:textColor="@color/background_app"
-                    android:maxLines="1"
                     android:background="@android:color/transparent"
-                    />
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@color/background_app" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
 
-
         <Button
+            android:id="@+id/BtnSend"
             android:layout_width="220dp"
             android:layout_height="70dp"
-            android:text="@string/title_register"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:id="@+id/BtnSend"
             android:backgroundTint="@color/orange_icons"
-            android:textSize="22sp"
-            />
+            android:text="@string/title_register"
+            android:textSize="22sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -228,15 +219,16 @@
             <View
                 android:layout_width="135dp"
                 android:layout_height="2dp"
-                android:background="@color/grey_components"
-                android:layout_marginVertical="8dp">
+                android:layout_marginVertical="8dp"
+                android:background="@color/grey_components">
 
             </View>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/other"
                 android:paddingHorizontal="10dp"
+                android:text="@string/other"
                 android:textColor="@color/black">
 
             </TextView>
@@ -244,8 +236,8 @@
             <View
                 android:layout_width="135dp"
                 android:layout_height="2dp"
-                android:background="@color/grey_components"
-                android:layout_marginVertical="8dp">
+                android:layout_marginVertical="8dp"
+                android:background="@color/grey_components">
 
             </View>
         </LinearLayout>
@@ -254,13 +246,12 @@
             android:id="@+id/textIni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/title_logIn"
-            android:textSize="22sp"
             android:layout_marginTop="30dp"
-            android:textColor="@color/black" />
+            android:text="@string/title_logIn"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
     </LinearLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

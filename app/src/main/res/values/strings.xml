@@ -19,4 +19,17 @@
     <string name="text_card2">Crear rutina</string>
     <string name="Button_card1">Ver más</string>
     <string name="Button_card2">Empezar</string>
+
+    <string name="titleRutinas">Rutinas</string>
+    <string name="subRutinas">Aquí puedes elegir o crear</string>
+    <string name="subRutinas2">una rutina personalizada</string>
+    <string name="titlePrin">Principiante</string>
+    <string name="titlePrin2">Rutinas recomendadas para principiantes.</string>
+    <string name="titleInter">Intermedio</string>
+    <string name="titleInter2">Rutina para personas que práctican ejercicio frecuentemente.</string>
+    <string name="titleAvan">Avanzado</string>
+    <string name="titleAvan2">Perfecto para personas con varios años de entrenamiento y experiencia.</string>
+    <string name="titlePer">Personalizada</string>
+    <string name="titlePer2">Aquí puedes realizar rutinas a tus gustos y preferencias.</string>
+
 </resources>
