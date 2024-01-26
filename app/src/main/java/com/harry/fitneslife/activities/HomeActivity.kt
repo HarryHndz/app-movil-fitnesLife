@@ -19,12 +19,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
-
-
-
+        initComponent()
         binding.homeTxt.setOnClickListener {
             goToPrin()
         }
