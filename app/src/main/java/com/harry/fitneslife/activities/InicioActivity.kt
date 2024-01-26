@@ -6,24 +6,21 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.harry.fitneslife.R
+import com.harry.fitneslife.databinding.ActivityInicioBinding
 
 class InicioActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityInicioBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_inicio)
+        binding = ActivityInicioBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnRegister = findViewById<TextView>(R.id.textResgis)
-        val btnSend = findViewById<Button>(R.id.BtnSend)
+        binding.textResgis.setOnClickListener {
+            goToRegister() }
 
-        btnRegister.setOnClickListener {
-            goToRegister()
-        }
-
-        btnSend.setOnClickListener {
-            goToHome()
-        }
-
+        binding.BtnSend.setOnClickListener {
+            goToHome() }
     }
 
     private fun goToRegister(){

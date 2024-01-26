@@ -5,15 +5,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.cardview.widget.CardView
 import com.harry.fitneslife.R
+import com.harry.fitneslife.databinding.ActivityRutinasBinding
 
 class RutinasActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityRutinasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_rutinas)
+        binding = ActivityRutinasBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val prin = findViewById<CardView>(R.id.ejerPrin)
-
-        prin.setOnClickListener {
+        binding.ejerPrin.setOnClickListener {
             principiante()
         }
 
@@ -23,5 +24,4 @@ class RutinasActivity : AppCompatActivity() {
         val i = Intent(this, PrincipianteActivity::class.java)
         startActivity(i)
     }
-
 }

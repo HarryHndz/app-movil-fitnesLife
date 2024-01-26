@@ -7,19 +7,17 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.harry.fitneslife.R
+import com.harry.fitneslife.databinding.ActivityRegistroBinding
 
 class RegistroActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityRegistroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registro)
 
-        val btnInicio = findViewById<TextView>(R.id.textIni)
-        val name = findViewById<EditText>(R.id.EditName)
-        val email = findViewById<EditText>(R.id.EditEmail)
-        val pass = findViewById<EditText>(R.id.EditPassword)
-        val passVerify = findViewById<EditText>(R.id.EditRptPass)
+        binding = ActivityRegistroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        btnInicio.setOnClickListener {
+        binding.textIni.setOnClickListener {
             goToLogIn()
         }
     }
