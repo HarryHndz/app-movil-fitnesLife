@@ -14,7 +14,7 @@ class RutinasActivity : AppCompatActivity() {
         binding = ActivityRutinasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.ejerPrin.setOnClickListener {
+        binding.viewPrin.setOnClickListener {
             principiante()
         }
 
