@@ -3,14 +3,10 @@ package com.harry.fitneslife.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.harry.fitneslife.R
 import com.harry.fitneslife.adapter.HomeAdaptaer
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.ActivityHomeBinding
-import com.harry.fitneslife.funAndClass.HomeBox
 import com.harry.fitneslife.funAndClass.ListBox
 
 class HomeActivity : AppCompatActivity() {

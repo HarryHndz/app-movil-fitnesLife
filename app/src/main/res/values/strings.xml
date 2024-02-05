@@ -32,4 +32,14 @@
     <string name="titlePer">Personalizada</string>
     <string name="titlePer2">Aquí puedes realizar rutinas a tus gustos y preferencias.</string>
 
+    <string name="menuInicio">Inicio</string>
+    <string name="menuRutinas">Rutinas</string>
+    <string name="menuEjercicios">Ejercicios</string>
+    <string name="menuCuerpo">Cuerpo</string>
+    <string name="menuConfiguracion">Configuracion</string>
+    <string name="menuCuenta">Cuenta</string>
+    <string name="name_user">Harry Hernández</string>
+    <string name="imgInText">img user</string>
+
+
 </resources>
