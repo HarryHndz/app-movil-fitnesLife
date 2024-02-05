@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -27,19 +28,22 @@
                 android:text="@string/titleRutinas"
                 android:textColor="@color/black"
                 android:textSize="45sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginHorizontal="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/subRutinas"
                 android:textColor="@color/black"
+                android:layout_marginHorizontal="5dp"
                 android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/subRutinas2"
+                android:layout_marginHorizontal="5dp"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -58,6 +62,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:cardCornerRadius="16dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title">

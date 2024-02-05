@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harry.fitneslife.R
 import com.harry.fitneslife.adapter.HomeAdaptaer
+import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.ActivityHomeBinding
 import com.harry.fitneslife.funAndClass.HomeBox
 import com.harry.fitneslife.funAndClass.ListBox
@@ -20,10 +21,20 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initComponent()
-        binding.homeTxt.setOnClickListener {
+        iniciarSesion()
+        binding.btnMoreExercise.setOnClickListener {
             goToPrin()
         }
 
+    }
+
+    private fun iniciarSesion() {
+        binding.back.setOnClickListener {
+            userData.wipe()
+            startActivity(Intent(this, InicioActivity::class.java))
+        }
+        val name = userData.getName()
+        binding.tvSaludo.text = "$name"
     }
 
     private fun goToPrin() {
