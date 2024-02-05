@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item android:id="@+id/navInicio"
+            android:title="@string/menuInicio"
+            android:icon="@drawable/ic_home">
+        </item>
+        <item
+            android:id="@+id/navRutinas"
+            android:title="@string/menuRutinas"
+            android:icon="@drawable/ic_routine">
+
+        </item>
+        <item
+            android:id="@+id/navEjercicios"
+            android:title="@string/menuEjercicios"
+            android:icon="@drawable/ic_exercise"
+            >
+        </item>
+
+        <item
+            android:id="@+id/navCuepro"
+            android:title="@string/menuCuerpo"
+            android:icon="@drawable/ic_body"
+            >
+
+        </item>
+
+        <item
+            android:id="@+id/navCuenta"
+            android:title="@string/menuCuenta"
+            android:icon="@drawable/ic_person">
+
+        </item>
+
+        <item
+            android:id="@+id/navConfiguracion"
+            android:title="@string/menuConfiguracion"
+            android:icon="@drawable/ic_settings">
+
+        </item>
+    </group>
+
+</menu>
