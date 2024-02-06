@@ -41,5 +41,8 @@
     <string name="name_user">Harry Hernández</string>
     <string name="imgInText">img user</string>
 
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+
 
 </resources>
