@@ -19,7 +19,7 @@
         </item>
 
         <item
-            android:id="@+id/navCuepro"
+            android:id="@+id/navCuerpo"
             android:title="@string/menuCuerpo"
             android:icon="@drawable/ic_body"
             >
