@@ -23,7 +23,7 @@ class InicioActivity : AppCompatActivity() {
 
         binding.BtnSend.setOnClickListener { validarCampos() }
 
-        checkUserValues()
+       checkUserValues()
     }
 
     private fun validarCampos() {

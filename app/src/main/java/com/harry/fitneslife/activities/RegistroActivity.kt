@@ -29,8 +29,6 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun validarCampos() {
-
-
         var nombre = binding.EditName?.text.toString()
         var email = binding.EditEmail?.text.toString()
         var pass = binding.EditPassword?.text.toString()
