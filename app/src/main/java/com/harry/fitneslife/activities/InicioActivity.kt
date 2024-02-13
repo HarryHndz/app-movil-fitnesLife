@@ -23,7 +23,7 @@ class InicioActivity : AppCompatActivity() {
 
         binding.BtnSend.setOnClickListener { validarCampos() }
 
-        checkUserValues()
+       checkUserValues()
     }
 
     private fun validarCampos() {
@@ -75,7 +75,7 @@ class InicioActivity : AppCompatActivity() {
     }
 
     private fun goToHome(){
-        val x = Intent(this, HomeActivity::class.java)
+        val x = Intent(this, MenuActivity::class.java)
         startActivity(x)
     }
 }

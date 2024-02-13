@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="56dp">
-
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -175,7 +173,9 @@
                 android:layout_marginTop="60dp"
                 android:backgroundTint="@color/orange_icons"
                 android:text="@string/Button_card1"
-                android:textSize="19sp"></Button>
+                android:textSize="19sp">
+
+            </Button>
 
         </androidx.cardview.widget.CardView>
 
@@ -245,6 +245,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnMoreRutina"
                 android:layout_width="130dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"

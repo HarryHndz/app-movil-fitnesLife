@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_graph"
+    app:startDestination="@id/navInicio">
+
+    <fragment
+        android:id="@+id/navEjercicios"
+        android:name="com.harry.fitneslife.fragments.EjercicioFragment"
+        android:label="fragment_ejercicio"
+        tools:layout="@layout/fragment_ejercicio" />
+    <fragment
+        android:id="@+id/navRutinas"
+        android:name="com.harry.fitneslife.fragments.RutinaFragment"
+        android:label="fragment_rutina"
+        tools:layout="@layout/fragment_rutina" />
+    <fragment
+        android:id="@+id/navInicio"
+        android:name="com.harry.fitneslife.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navInicio_to_navRutinas"
+            app:destination="@id/navRutinas" />
+        <action
+            android:id="@+id/action_navInicio_to_navEjercicios"
+            app:destination="@id/navEjercicios" />
+    </fragment>
+</navigation>

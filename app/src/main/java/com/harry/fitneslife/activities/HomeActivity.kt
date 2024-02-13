@@ -30,7 +30,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, InicioActivity::class.java))
         }
         val name = userData.getName()
-        binding.tvSaludo.text = "$name"
+        binding.tvSaludo.text = name
     }
 
     private fun goToPrin() {
