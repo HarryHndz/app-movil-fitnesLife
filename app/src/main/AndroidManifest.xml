@@ -19,18 +19,6 @@
             android:exported="false"/>
 
         <activity
-            android:name=".activities.PrincipianteActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".activities.RutinasActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".activities.HomeActivity"
-            android:exported="true"/>
-
-        <activity
             android:name=".activities.InicioActivity"
             android:exported="true">
 

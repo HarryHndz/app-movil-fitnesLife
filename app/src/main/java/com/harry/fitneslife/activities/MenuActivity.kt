@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -30,6 +31,7 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         bindig = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(bindig.root)
+        Log.i("ciclo", "onCreateMenu")
 
         setSupportActionBar(bindig.appBarMenu.toolbarMenu)
 

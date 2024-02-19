@@ -20,14 +20,14 @@ class InicioActivity : AppCompatActivity() {
         binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Log.i("ciclo", "onCreate")
+        Log.i("ciclo", "onCreateInicio")
         checkUserValues()
 
     }
 
     override fun onStart() {
         super.onStart()
-        Log.i("ciclo", "onStart")
+        Log.i("ciclo", "onStartInicio")
     }
 
     override fun onResume() {
@@ -35,30 +35,27 @@ class InicioActivity : AppCompatActivity() {
         binding.textResgis.setOnClickListener { goToRegister() }
         binding.BtnSend.setOnClickListener { validarCampos() }
 
-        Log.i("ciclo", "onResume")
+        Log.i("ciclo", "onResumeInicio")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.i("ciclo", "onPause")
+        Log.i("ciclo", "onPauseInicio")
     }
 
     override fun onStop() {
         super.onStop()
-        Log.i("ciclo", "onStop")
+        Log.i("ciclo", "onStopInicio")
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i("ciclo", "onDestroy")
+        Log.i("ciclo", "onDestroyInicio")
     }
 
     override fun onRestart() {
         super.onRestart()
-        Log.i("ciclo", "onRestart")
-        if (userData.getName().isNotEmpty()) {
-            goToHome()
-        }
+        Log.i("ciclo", "onRestartInicio")
     }
 
     private fun validarCampos() {
@@ -110,10 +107,12 @@ class InicioActivity : AppCompatActivity() {
     private fun goToRegister() {
         val x = Intent(this, RegistroActivity::class.java)
         startActivity(x)
+        finish()
     }
 
     private fun goToHome() {
         val x = Intent(this, MenuActivity::class.java)
         startActivity(x)
+        finish()
     }
 }

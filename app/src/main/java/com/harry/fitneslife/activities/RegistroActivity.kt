@@ -12,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import com.harry.fitneslife.R
 import com.harry.fitneslife.baseDeDatos.SQLite
+import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife
 import com.harry.fitneslife.databinding.ActivityRegistroBinding
 
 class RegistroActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class RegistroActivity : AppCompatActivity() {
     private lateinit var binding : ActivityRegistroBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("ciclo", "onCreateRegistro")
 
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -27,6 +29,36 @@ class RegistroActivity : AppCompatActivity() {
 
         binding.BtnSend.setOnClickListener { validarCampos() }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("ciclo", "onStartRegistro")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("ciclo", "onResumeRegistro")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("ciclo", "onPauseRegistro")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("ciclo", "onStopRegistro")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("ciclo", "onDestroyRegistro")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("ciclo", "onRestartRegistro")
     }
 
     private fun validarCampos() {
@@ -98,6 +130,7 @@ class RegistroActivity : AppCompatActivity() {
     private fun goToLogIn(){
         val x = Intent(this, InicioActivity::class.java)
         startActivity(x)
+        finish()
     }
 
     private fun showDialog(alert: String) {
