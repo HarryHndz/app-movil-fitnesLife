@@ -25,10 +25,7 @@
             android:layout_marginBottom="20dp"
             android:text="@string/title_register"
             android:textColor="@color/black"
-            android:textSize="45sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="45sp" />
 
         <TextView
             android:id="@+id/textName"

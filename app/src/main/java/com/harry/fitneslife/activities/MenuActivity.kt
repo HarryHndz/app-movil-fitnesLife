@@ -21,9 +21,9 @@ import com.google.android.material.snackbar.Snackbar
 import com.harry.fitneslife.R
 import com.harry.fitneslife.databinding.ActivityMenuBinding
 
-class MenuActivity : AppCompatActivity(){
-    private lateinit var  bindig : ActivityMenuBinding
-    private lateinit var  appBarConfiguration: AppBarConfiguration
+class MenuActivity : AppCompatActivity() {
+    private lateinit var bindig: ActivityMenuBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,14 +33,14 @@ class MenuActivity : AppCompatActivity(){
 
         setSupportActionBar(bindig.appBarMenu.toolbarMenu)
 
-        val drawerLayout : DrawerLayout = bindig.drawerLayout
+        val drawerLayout: DrawerLayout = bindig.drawerLayout
         val navView: NavigationView = bindig.navView
         val navController = findNavController(R.id.navHostFragment)
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navEjercicios,R.id.navInicio,R.id.navRutinas),drawerLayout
+            setOf(R.id.navEjercicios, R.id.navInicio, R.id.navRutinas), drawerLayout
         )
 
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
     }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FitnesLife</string>
     <string name="title_register">Registrarse</string>
     <string name="title_name">Introduce tu nombre:</string>
@@ -47,4 +47,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
+    <string name="titleAlerts">Ups!, ha ocurrido un error</string>
+    <string name="btnConfirmar">Ok</string>
 </resources>
