@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FitnesLife</string>
+    <string name="title_register">Logout</string>
+    <string name="title_name">Enter your name:</string>
+    <string name="title_email">Enter your email</string>
+    <string name="title_passwordVeri">Enter your password</string>
+    <string name="title_password">Create to password:</string>
+    <string name="title_rptPassword">Repeat your password:</string>
+    <string name="title_logIn">Login</string>
+    <string name="other">Or</string>
+    <string name="hint_input">this is editable text</string>
+    <string name="home_welcome">Welcome!</string>
+    <string name="home_title">Start your path in fitness life</string>
+    <string name="title_card1_home">Explore</string>
+    <string name="paragraph_card1_home">Explore the different exercises for each muscle part</string>
+    <string name="title_card2_home">Training</string>
+    <string name="paragraph_card2_home">Create your exercise routine</string>
+    <string name="text_card1">Explore the exercises for each level</string>
+    <string name="text_card2">Create routine</string>
+    <string name="Button_card1">See more</string>
+    <string name="Button_card2">Starting</string>
+
+    <string name="titleRutinas">Routines</string>
+    <string name="subRutinas">Here you can choose or create</string>
+    <string name="subRutinas2">Personalized routine</string>
+    <string name="titlePrin">Beginner</string>
+    <string name="titlePrin2">Recommend routines for beginner</string>
+    <string name="titleInter">Intermediate</string>
+    <string name="titleInter2">Routine for persons than practice frequently exercises</string>
+    <string name="titleAvan">Hardcode</string>
+    <string name="titleAvan2">Perfect for persons with something training and experience years</string>
+    <string name="titlePer">Personalized</string>
+    <string name="titlePer2">Here can do routines to yours preferences and  tastes.</string>
+
+    <string name="menuInicio">Inicio</string>
+    <string name="menuRutinas">Routines</string>
+    <string name="menuEjercicios">Exercises</string>
+    <string name="menuCuerpo">Body</string>
+    <string name="menuConfiguracion">Configuration</string>
+    <string name="menuCuenta">Count</string>
+    <string name="name_user">Harry Hernández</string>
+    <string name="imgInText">img user</string>
+
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
