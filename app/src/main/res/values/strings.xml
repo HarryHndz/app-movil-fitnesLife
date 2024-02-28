@@ -58,4 +58,10 @@
     <string name="contraseñaCorta">La contraseña debe tener por lo menos 6 caracteres</string>
     <string name="resuelva">Debe llenar todos los campos</string>
     <string name="exito">Su registro fué exitoso</string>
+
+    <string name="cerrandoCiclo">Cerrar Sesión</string>
+    <string name="cardio">Cardio</string>
+    <string name="ejercicio">Ejercicios</string>
+    <string name="rutina">Rutinas</string>
+    <string name="body">Cuerpo</string>
 </resources>
