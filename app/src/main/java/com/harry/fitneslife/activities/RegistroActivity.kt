@@ -3,13 +3,18 @@ package com.harry.fitneslife.activities
 import android.app.Dialog
 import android.content.ContentValues
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.Drawable
+import android.graphics.drawable.GradientDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.harry.fitneslife.R
 import com.harry.fitneslife.baseDeDatos.SQLite
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife
@@ -137,6 +142,8 @@ class RegistroActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.setContentView(R.layout.dialog_alert)
 
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
+
         val btn: Button = dialog.findViewById(R.id.btnConfirmacion)
         val tvWarning: TextView = dialog.findViewById(R.id.tvWarning)
         tvWarning.text = alert
@@ -145,4 +152,5 @@ class RegistroActivity : AppCompatActivity() {
 
         dialog.show()
     }
+
 }

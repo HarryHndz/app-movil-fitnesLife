@@ -1,5 +1,6 @@
 package com.harry.fitneslife.activities
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -65,6 +66,7 @@ class InicioActivity : AppCompatActivity() {
         if (email.isNotEmpty() && pass.isNotEmpty()) {
             confirmarUsuario(email, pass)
         } else {
+            showDialog("Debe llenar todos los campos")
             Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_SHORT).show()
         }
     }
@@ -82,10 +84,12 @@ class InicioActivity : AppCompatActivity() {
                 val correo = fila.getString(1)
                 iniciarSesion(nombre, correo)
             } else {
+                showDialog("Contraseña Incorrecta")
                 Toast.makeText(this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show()
             }
             baseDatos.close()
         } else {
+            showDialog("No hay registro con ese correo")
             Toast.makeText(this, "No hay registro con ese correo", Toast.LENGTH_SHORT).show()
             baseDatos.close()
         }
@@ -114,5 +118,20 @@ class InicioActivity : AppCompatActivity() {
         val x = Intent(this, MenuActivity::class.java)
         startActivity(x)
         finish()
+    }
+
+    private fun showDialog(alert: String) {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_alert)
+
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
+
+        val btn: Button = dialog.findViewById(R.id.btnConfirmacion)
+        val tvWarning: TextView = dialog.findViewById(R.id.tvWarning)
+        tvWarning.text = alert
+
+        btn.setOnClickListener { dialog.hide() }
+
+        dialog.show()
     }
 }
