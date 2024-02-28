@@ -26,7 +26,6 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var bindig: ActivityMenuBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindig = ActivityMenuBinding.inflate(layoutInflater)
@@ -50,5 +49,35 @@ class MenuActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.navHostFragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("ciclo", "onStartMenu")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("ciclo", "onResumeMenu")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("ciclo", "onPauseMenu")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("ciclo", "onStopMenu")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("ciclo", "onDestroyMenu")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("ciclo", "onRestartMenu")
     }
 }
