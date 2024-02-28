@@ -66,8 +66,8 @@ class InicioActivity : AppCompatActivity() {
         if (email.isNotEmpty() && pass.isNotEmpty()) {
             confirmarUsuario(email, pass)
         } else {
-            showDialog("Debe llenar todos los campos")
-            Toast.makeText(this, "Debe llenar todos los campos", Toast.LENGTH_SHORT).show()
+            showDialog(getString(R.string.resuelva))
+            Toast.makeText(this, getString(R.string.resuelva), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -84,13 +84,13 @@ class InicioActivity : AppCompatActivity() {
                 val correo = fila.getString(1)
                 iniciarSesion(nombre, correo)
             } else {
-                showDialog("Contraseña Incorrecta")
-                Toast.makeText(this, "Contraseña Incorrecta", Toast.LENGTH_SHORT).show()
+                showDialog(getString(R.string.contaseñaIncorrecta))
+                Toast.makeText(this, getString(R.string.contaseñaIncorrecta), Toast.LENGTH_SHORT).show()
             }
             baseDatos.close()
         } else {
-            showDialog("No hay registro con ese correo")
-            Toast.makeText(this, "No hay registro con ese correo", Toast.LENGTH_SHORT).show()
+            showDialog(getString(R.string.notFound))
+            Toast.makeText(this, getString(R.string.notFound), Toast.LENGTH_SHORT).show()
             baseDatos.close()
         }
 

@@ -78,20 +78,20 @@ class RegistroActivity : AppCompatActivity() {
                     if(buscarRegistro(email)) {
                         registrar(nombre, email, pass)
                     } else {
-                        showDialog("Ya hay una cuenta con ese correo")
-                        Toast.makeText(this,"Ya hay una cuenta con ese correo", Toast.LENGTH_LONG).show()
+                        showDialog(getString(R.string.yesFound))
+                        Toast.makeText(this,getString(R.string.yesFound), Toast.LENGTH_LONG).show()
                     }
                 } else {
-                    showDialog("Las contraseñas no coinciden")
-                    Toast.makeText(this,"Las contraseñas no coinciden", Toast.LENGTH_LONG).show()
+                    showDialog(getString(R.string.contraseñaNoCoincide))
+                    Toast.makeText(this,getString(R.string.contraseñaNoCoincide), Toast.LENGTH_LONG).show()
                 }
             } else {
-                showDialog("La contraseña debe tener por lo menos 6 caracteres")
-                Toast.makeText(this,"La contraseña debe tener por lo menos 6 caracteres", Toast.LENGTH_LONG).show()
+                showDialog(getString(R.string.contraseñaCorta))
+                Toast.makeText(this,getString(R.string.contraseñaCorta), Toast.LENGTH_LONG).show()
             }
         } else {
-            showDialog("Complete todos los campos vacios")
-            Toast.makeText(this,"Complete todos los campos vacios", Toast.LENGTH_LONG).show()
+            showDialog(getString(R.string.resuelva))
+            Toast.makeText(this,getString(R.string.resuelva), Toast.LENGTH_LONG).show()
         }
 
     }
@@ -106,8 +106,8 @@ class RegistroActivity : AppCompatActivity() {
         registro.put("contraseña",pass)
         dataBase.insert("usuarios",null,registro)
 
-        Toast.makeText(this,"Su reguistro exitoso", Toast.LENGTH_LONG).show()
-        Log.i("Hola", "Registro exitoso")
+        Toast.makeText(this,getString(R.string.exito), Toast.LENGTH_LONG).show()
+        Log.i("Hola", getString(R.string.exito))
         dataBase.close()
         goToLogIn()
     }

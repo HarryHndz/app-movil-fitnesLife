@@ -49,4 +49,13 @@
 
     <string name="titleAlerts">Ups!, ha ocurrido un error</string>
     <string name="btnConfirmar">Ok</string>
+
+    <string name="completeCampos">No hay registro con ese correo</string>
+    <string name="contaseñaIncorrecta">Contraseña Incorrecta</string>
+    <string name="notFound">No hay una cuenta con ese correo</string>
+    <string name="yesFound">Ya hay una cuenta con ese correo</string>
+    <string name="contraseñaNoCoincide">Las contraseñas no coinciden</string>
+    <string name="contraseñaCorta">La contraseña debe tener por lo menos 6 caracteres</string>
+    <string name="resuelva">Debe llenar todos los campos</string>
+    <string name="exito">Su registro fué exitoso</string>
 </resources>
