@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
-            android:text="Cerrar Sesion"
+            android:text="@string/cerrandoCiclo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/scrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="20dp">
+    android:layout_height="match_parent">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,7 +31,7 @@
             android:id="@+id/back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cerrar Sesion"
+            android:text="@string/cerrandoCiclo"
             app:layout_constraintStart_toEndOf="@+id/homeTxt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
