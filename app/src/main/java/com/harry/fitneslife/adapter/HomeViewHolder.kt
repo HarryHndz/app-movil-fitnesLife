@@ -7,9 +7,9 @@ import com.harry.fitneslife.funAndClass.HomeBox
 
 class HomeViewHolder(view: View): RecyclerView.ViewHolder(view)  {
 
-    val binding = BoxOrangeBinding.bind(view)
+    private val binding = BoxOrangeBinding.bind(view)
     fun render(HomeBoxModel: HomeBox) {
-        binding.textCarr.text = HomeBoxModel.title
+        binding.textCarr.text = HomeBoxModel.title.toString()
         binding.IconCarr.setImageResource(HomeBoxModel.icon)
 
     }
