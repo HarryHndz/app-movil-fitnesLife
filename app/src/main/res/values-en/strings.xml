@@ -33,17 +33,35 @@
     <string name="titlePer">Personalized</string>
     <string name="titlePer2">Here can do routines to yours preferences and  tastes.</string>
 
-    <string name="menuInicio">Inicio</string>
+    <string name="menuInicio">Start</string>
     <string name="menuRutinas">Routines</string>
     <string name="menuEjercicios">Exercises</string>
     <string name="menuCuerpo">Body</string>
     <string name="menuConfiguracion">Configuration</string>
     <string name="menuCuenta">Count</string>
-    <string name="name_user">Harry Hernández</string>
+    <string name="name_user">Leonardo</string>
     <string name="imgInText">img user</string>
 
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="titleAlerts">Oops!, an error occurred</string>
+    <string name="btnConfirmar">Ok</string>
+
+    <string name="completeCampos">There is no registration with that email</string>
+    <string name="contaseñaIncorrecta">Incorrect password</string>
+    <string name="notFound">There is no account with that email</string>
+    <string name="yesFound">There is already an account with that email</string>
+    <string name="contraseñaNoCoincide">Passwords do not match</string>
+    <string name="contraseñaCorta">Password must be at least 6 characters</string>
+    <string name="resuelva">You must fill out all fields</string>
+    <string name="exito">Your registration was successful</string>
+
+    <string name="cerrandoCiclo">Sign off</string>
+    <string name="cardio">Cardio</string>
+    <string name="ejercicio">Exercises</string>
+    <string name="rutina">Routines</string>
+    <string name="body">Body</string>
 </resources>

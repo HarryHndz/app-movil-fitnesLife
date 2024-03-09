@@ -6,4 +6,5 @@
     <color name="background_app">#F5F7F8</color>
     <color name="grey_components">#45474B</color>
     <color name="grey_low" >#909296</color>
+    <color name="transparente">#00FFFFFF</color>
 </resources>

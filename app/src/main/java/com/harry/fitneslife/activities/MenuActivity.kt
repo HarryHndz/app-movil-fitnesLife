@@ -5,6 +5,7 @@ import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -21,26 +22,26 @@ import com.google.android.material.snackbar.Snackbar
 import com.harry.fitneslife.R
 import com.harry.fitneslife.databinding.ActivityMenuBinding
 
-class MenuActivity : AppCompatActivity(){
-    private lateinit var  bindig : ActivityMenuBinding
-    private lateinit var  appBarConfiguration: AppBarConfiguration
-
+class MenuActivity : AppCompatActivity() {
+    private lateinit var bindig: ActivityMenuBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindig = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(bindig.root)
+        Log.i("ciclo", "onCreateMenu")
 
         setSupportActionBar(bindig.appBarMenu.toolbarMenu)
 
-        val drawerLayout : DrawerLayout = bindig.drawerLayout
+        val drawerLayout: DrawerLayout = bindig.drawerLayout
         val navView: NavigationView = bindig.navView
         val navController = findNavController(R.id.navHostFragment)
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navEjercicios,R.id.navInicio,R.id.navRutinas),drawerLayout
+            setOf(R.id.navEjercicios, R.id.navInicio, R.id.navRutinas), drawerLayout
         )
 
-        setupActionBarWithNavController(navController,appBarConfiguration)
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
     }
@@ -48,5 +49,35 @@ class MenuActivity : AppCompatActivity(){
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.navHostFragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("ciclo", "onStartMenu")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("ciclo", "onResumeMenu")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("ciclo", "onPauseMenu")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("ciclo", "onStopMenu")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("ciclo", "onDestroyMenu")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("ciclo", "onRestartMenu")
     }
 }

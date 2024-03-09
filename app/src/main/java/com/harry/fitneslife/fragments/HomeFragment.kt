@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.harry.fitneslife.R
-import com.harry.fitneslife.activities.RegistroActivity
+import com.harry.fitneslife.activities.InicioActivity
 import com.harry.fitneslife.adapter.HomeAdaptaer
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.FragmentHomeBinding
@@ -49,7 +49,7 @@ class HomeFragment : Fragment() {
     fun cerrarSesion(){
         binding.back.setOnClickListener {
             userData.wipe()
-            val intent = Intent(activity,RegistroActivity::class.java)
+            val intent = Intent(activity, InicioActivity::class.java)
             startActivity(intent)
         }
         val name = userData.getName()

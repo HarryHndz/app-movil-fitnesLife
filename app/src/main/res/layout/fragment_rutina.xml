@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="25dp"
-    android:paddingVertical="32dp"
-    tools:context=".activities.RutinasActivity">
+    android:paddingTop="30dp">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/title"
