@@ -1,16 +1,18 @@
 package com.harry.fitneslife.funAndClass
 
+
+import android.content.res.Resources
 import com.harry.fitneslife.R
 
 class ListBox{
     companion object{
-        val carrusel = listOf<HomeBox>(
-            HomeBox("getString(R.string.resuelva)", R.drawable.ic_cardio),
-            HomeBox("getString(R.string.ejercicio)",R.drawable.ic_exercise),
-            HomeBox("getString(R.string.rutina)",R.drawable.ic_routine),
-            HomeBox("getString(R.string.body)",R.drawable.ic_body)
-        )
 
+        val carrusel = listOf<HomeBox>(
+            HomeBox("Cardio", R.drawable.ic_cardio),
+            HomeBox("Ejercicios",R.drawable.ic_exercise),
+            HomeBox("Rutinas",R.drawable.ic_routine),
+            HomeBox("Cuerpo",R.drawable.ic_body)
+        )
 
     }
 }
