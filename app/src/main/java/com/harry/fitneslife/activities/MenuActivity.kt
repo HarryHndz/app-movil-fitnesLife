@@ -38,7 +38,7 @@ class MenuActivity : AppCompatActivity() {
         val navView: NavigationView = bindig.navView
         val navController = findNavController(R.id.navHostFragment)
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.navEjercicios, R.id.navInicio, R.id.navRutinas), drawerLayout
+            setOf(R.id.navEjercicios, R.id.navInicio, R.id.navRutinas, R.id.navCuerpo), drawerLayout
         )
 
         setupActionBarWithNavController(navController, appBarConfiguration)

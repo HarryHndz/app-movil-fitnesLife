@@ -20,7 +20,7 @@ class InicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        val con = SQLite(this, "fitlife", null, 1)
         Log.i("ciclo", "onCreateInicio")
         checkUserValues()
 
@@ -75,14 +75,15 @@ class InicioActivity : AppCompatActivity() {
         val con = SQLite(this, "fitlife", null, 1)
         val baseDatos = con.writableDatabase
         val fila = baseDatos.rawQuery(
-            "select nombre, correo, contraseña from usuarios where correo = '$email'",
+            "select nombre, correo, contraseña, imc from usuarios where correo = '$email'",
             null
         )
         if (fila != null && fila.moveToFirst()) {
             if (pass == fila.getString(2)) {
                 val nombre = fila.getString(0)
                 val correo = fila.getString(1)
-                iniciarSesion(nombre, correo)
+                var imc: String = fila.getString(3)
+                iniciarSesion(nombre, correo, imc)
             } else {
                 showDialog(getString(R.string.contaseñaIncorrecta))
                 Toast.makeText(this, getString(R.string.contaseñaIncorrecta), Toast.LENGTH_SHORT).show()
@@ -102,9 +103,11 @@ class InicioActivity : AppCompatActivity() {
         }
     }
 
-    private fun iniciarSesion(nombre: String, correo: String) {
+    private fun iniciarSesion(nombre: String, correo: String, imc: String) {
         userData.saveNombre(nombre)
         userData.saveEmail(correo)
+        userData.saveImc(imc)
+
         goToHome()
     }
 
