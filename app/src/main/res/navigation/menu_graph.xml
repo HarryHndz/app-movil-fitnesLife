@@ -26,5 +26,13 @@
         <action
             android:id="@+id/action_navInicio_to_navEjercicios"
             app:destination="@id/navEjercicios" />
+        <action
+            android:id="@+id/action_navInicio_to_bodyFragment"
+            app:destination="@id/navCuerpo" />
     </fragment>
+    <fragment
+        android:id="@+id/navCuerpo"
+        android:name="com.harry.fitneslife.fragments.BodyFragment"
+        android:label="fragment_body"
+        tools:layout="@layout/fragment_body" />
 </navigation>

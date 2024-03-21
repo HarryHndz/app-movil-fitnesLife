@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EjercicioFragment">
+    tools:context=".fragments.BodyFragment">
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleEjercicios"
+    <TextView
+        android:id="@+id/nombreApi"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
 
-    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>
