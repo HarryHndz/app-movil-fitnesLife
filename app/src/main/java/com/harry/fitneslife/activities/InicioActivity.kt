@@ -72,7 +72,7 @@ class InicioActivity : AppCompatActivity() {
     }
 
     private fun confirmarUsuario(email: String, pass: String) {
-        val con = SQLite(this, "fitlife", null, 1)
+        val con = SQLite(this, "fitlife", null, 2)
         val baseDatos = con.writableDatabase
         val fila = baseDatos.rawQuery(
             "select nombre, correo, contraseña, imc from usuarios where correo = '$email'",

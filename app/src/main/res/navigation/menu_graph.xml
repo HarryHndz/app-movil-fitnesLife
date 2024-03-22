@@ -29,10 +29,18 @@
         <action
             android:id="@+id/action_navInicio_to_navCuerpo"
             app:destination="@+id/navCuerpo" />
+        <action
+            android:id="@+id/action_navInicio_to_navCuenta"
+            app:destination="@+id/navCuenta" />
     </fragment>
     <fragment
         android:id="@+id/navCuerpo"
         android:name="com.harry.fitneslife.fragments.BodyFragment"
         android:label="fragment_body"
         tools:layout="@layout/fragment_body" />
+    <fragment
+        android:id="@+id/navCuenta"
+        android:name="com.harry.fitneslife.fragments.CountFragment"
+        android:label="fragment_count"
+        tools:layout="@layout/fragment_count" />
 </navigation>

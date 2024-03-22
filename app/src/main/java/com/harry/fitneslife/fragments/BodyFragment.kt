@@ -115,10 +115,13 @@ class BodyFragment : Fragment() {
     }
 
     private fun guardarDatos(result: Double) {
-        var con = SQLite(requireContext(), "fitlife", null, 1)
+        var con = SQLite(requireContext(), "fitlife", null, 2)
         var dataBase = con.writableDatabase
         var correo = userData.getEmail()
-        dataBase.rawQuery("update usuarios set imc = '$result' where correo = '$correo'" , null)
+        val values = ContentValues()
+        values.put("imc", result)
+        dataBase.update("usuarios", values, "correo =?", arrayOf(correo))
+
         dataBase.close()
     }
 
