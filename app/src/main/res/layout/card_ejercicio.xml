@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_width="170dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardCornerRadius="20dp"
+    android:backgroundTint="@color/grey_low"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,24 +19,20 @@
         <ImageView
             android:id="@+id/imgEjercicio"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:layout_marginBottom="10dp"/>
-
+            android:layout_height="200dp" />
         <TextView
             android:id="@+id/nombreEjercicio"
             android:layout_width="match_parent"
+            android:lines="2"
             android:layout_height="wrap_content"
+            android:paddingStart="15dp"
+            android:textColor="@color/white"
             android:text="Press de banca inclinado"/>
-        <TextView
-            android:id="@+id/descripcionEjercicio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""/>
-        <TextView
-            android:id="@+id/EdadEjercicio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="prueba"/>
+<!--        <TextView-->
+<!--            android:id="@+id/descripcionEjercicio"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Prueba"/>-->
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
