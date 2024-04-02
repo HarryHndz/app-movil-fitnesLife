@@ -13,8 +13,8 @@
 
     <ImageView
         android:id="@+id/nav_header_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:contentDescription="@string/imgInText"
         android:src="@drawable/ic_person"
         app:tint="@color/orange_icons">
@@ -27,7 +27,7 @@
         android:layout_marginTop="10dp"
         android:text="@string/name_user"
         android:textColor="@color/white"
-        android:textSize="30sp">
+        android:textSize="25sp">
 
     </TextView>
 

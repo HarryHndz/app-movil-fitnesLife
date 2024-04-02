@@ -20,30 +20,18 @@
             android:name=".activities.MenuActivity"
             android:exported="false">
         </activity>
-        <activity
-            android:name=".activities.PrincipianteActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.RutinasActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.HomeActivity"
-            android:exported="true">
 
-        </activity>
         <activity
             android:name=".activities.InicioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".activities.RegistroActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-    </application>
 
+        <activity
+            android:name=".activities.RegistroActivity"
+            android:exported="false"/>
+    </application>
 </manifest>

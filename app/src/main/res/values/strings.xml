@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FitnesLife</string>
     <string name="title_register">Registrarse</string>
     <string name="title_name">Introduce tu nombre:</string>
@@ -46,5 +46,52 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <string name="titleAlerts">Ups!, ha ocurrido un error</string>
+    <string name="btnConfirmar">Ok</string>
+
+    <string name="completeCampos">No hay registro con ese correo</string>
+    <string name="contaseñaIncorrecta">Contraseña Incorrecta</string>
+    <string name="notFound">No hay una cuenta con ese correo</string>
+    <string name="yesFound">Ya hay una cuenta con ese correo</string>
+    <string name="contraseñaNoCoincide">Las contraseñas no coinciden</string>
+    <string name="contraseñaCorta">La contraseña debe tener por lo menos 6 caracteres</string>
+    <string name="resuelva">Debe llenar todos los campos</string>
+    <string name="exito">Su registro fué exitoso</string>
+
+    <string name="cerrandoCiclo">Cerrar Sesión</string>
+    <string name="cardio">Cardio</string>
+    <string name="ejercicio">Ejercicios</string>
+    <string name="rutina">Rutinas</string>
+    <string name="body">Cuerpo</string>
+
+
+    <string name="male">Hombre</string>
+    <string name="female">Mujer</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="age">Edad</string>
+    <string name="calculate">Calcular</string>
+    <string name="result">Tu resultado</string>
+    <string name="recalculate">Salir</string>
+
+    <string name="error">Error</string>
+    <string name="title_bajo_peso">Bajo peso</string>
+    <string name="descripcion_bajo_peso">Estás por debajo de lo óptimo para tu peso y altura.</string>
+    <string name="title_peso_normal">Peso normal</string>
+    <string name="descripcion_peso_normal">Estás en lo óptimo para tu peso y altura.</string>
+    <string name="title_sobrepeso">Sobrepeso</string>
+    <string name="descripcion_sobrepeso">Estás por encima de lo óptimo para tu peso y altura.</string>
+    <string name="title_obesidad">Obesidad</string>
+    <string name="descripcion_obesidad">Estás muy por encima de lo óptimo para tu peso y altura.</string>
+
+    <string name="nombre">Nombre del usuario</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="imc">Indice de masa corporar(IMC)</string>
+
+    <string name="actualizar">Actualizar</string>
+    <string name="cancelar">Cancelar</string>
+
+    <string name="todoBien">Todo está correcto, digo yoo...</string>
 
 </resources>

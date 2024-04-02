@@ -9,11 +9,7 @@
         android:id="@+id/navEjercicios"
         android:name="com.harry.fitneslife.fragments.EjercicioFragment"
         android:label="fragment_ejercicio"
-        tools:layout="@layout/fragment_ejercicio" >
-        <action
-            android:id="@+id/action_navEjercicios_to_detailExerFragment"
-            app:destination="@id/detailExerFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_ejercicio" />
     <fragment
         android:id="@+id/navRutinas"
         android:name="com.harry.fitneslife.fragments.RutinaFragment"
@@ -31,8 +27,11 @@
             android:id="@+id/action_navInicio_to_navEjercicios"
             app:destination="@id/navEjercicios" />
         <action
-            android:id="@+id/action_navInicio_to_bodyFragment"
+            android:id="@+id/action_navInicio_to_navCuerpo"
             app:destination="@id/navCuerpo" />
+        <action
+            android:id="@+id/action_navInicio_to_navCuenta"
+            app:destination="@+id/navCuenta" />
     </fragment>
     <fragment
         android:id="@+id/navCuerpo"
@@ -40,9 +39,8 @@
         android:label="fragment_body"
         tools:layout="@layout/fragment_body" />
     <fragment
-        android:id="@+id/detailExerFragment"
-        android:name="com.harry.fitneslife.fragments.DetailExerFragment"
-        android:label="fragment_detail_exer"
-        tools:layout="@layout/fragment_detail_exer" >
-    </fragment>
+        android:id="@+id/navCuenta"
+        android:name="com.harry.fitneslife.fragments.CountFragment"
+        android:label="fragment_count"
+        tools:layout="@layout/fragment_count" />
 </navigation>
