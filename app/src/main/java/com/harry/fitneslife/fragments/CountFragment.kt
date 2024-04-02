@@ -24,7 +24,6 @@ import kotlinx.coroutines.withContext
 class CountFragment : Fragment() {
 
     private var _binding: FragmentCountBinding? = null
-
     private val binding get() = _binding!!
 
     override fun onCreateView(

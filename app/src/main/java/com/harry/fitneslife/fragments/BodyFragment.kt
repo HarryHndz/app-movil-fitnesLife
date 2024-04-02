@@ -12,13 +12,13 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.slider.RangeSlider
 import com.harry.fitneslife.R
 import com.harry.fitneslife.baseDeDatos.SQLite
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.FragmentBodyBinding
-import com.harry.fitneslife.databinding.FragmentHomeBinding
 import java.text.DecimalFormat
 
 class BodyFragment : Fragment() {

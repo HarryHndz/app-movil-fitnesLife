@@ -19,7 +19,7 @@
         android:id="@+id/navInicio"
         android:name="com.harry.fitneslife.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home">
+        tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navInicio_to_navRutinas"
             app:destination="@id/navRutinas" />
@@ -28,7 +28,7 @@
             app:destination="@id/navEjercicios" />
         <action
             android:id="@+id/action_navInicio_to_navCuerpo"
-            app:destination="@+id/navCuerpo" />
+            app:destination="@id/navCuerpo" />
         <action
             android:id="@+id/action_navInicio_to_navCuenta"
             app:destination="@+id/navCuenta" />
