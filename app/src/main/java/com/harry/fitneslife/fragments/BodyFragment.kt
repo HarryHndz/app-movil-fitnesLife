@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.harry.fitneslife.databinding.FragmentBodyBinding
 
 
-
 class BodyFragment : Fragment() {
 
     private var _bindig : FragmentBodyBinding? = null
