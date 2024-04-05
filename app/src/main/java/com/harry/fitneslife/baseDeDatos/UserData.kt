@@ -7,6 +7,7 @@ class UserData(val context: Context) {
     val SHARED_EMAIL = "correo"
     val SHARED_USER_NAME = "nombre"
     val SHARED_IMC = "imc"
+    val SHARED_ID = "user_id"
 
     val storage = context.getSharedPreferences(SHARED_NAME, 0)
 
@@ -16,6 +17,10 @@ class UserData(val context: Context) {
 
     fun saveEmail(email:String) {
         storage.edit().putString(SHARED_EMAIL, email).apply()
+    }
+
+    fun saveId(id:Int) {
+        storage.edit().putInt(SHARED_ID, id).apply()
     }
 
     fun saveImc(imc:String) {
@@ -28,6 +33,10 @@ class UserData(val context: Context) {
 
     fun getEmail():String {
         return storage.getString(SHARED_EMAIL, "")!!
+    }
+
+    fun getId():Int {
+        return storage.getInt(SHARED_ID, -1)!!
     }
 
     fun getImc():String {

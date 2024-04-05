@@ -14,7 +14,12 @@
         android:id="@+id/navRutinas"
         android:name="com.harry.fitneslife.fragments.RutinaFragment"
         android:label="fragment_rutina"
-        tools:layout="@layout/fragment_rutina" />
+        tools:layout="@layout/fragment_rutina">
+
+        <action
+            android:id="@+id/action_navRutinas_to_rutinaPersonalizadaFragment"
+            app:destination="@id/rutinaPersonalizadaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navInicio"
         android:name="com.harry.fitneslife.fragments.HomeFragment"
@@ -43,4 +48,18 @@
         android:name="com.harry.fitneslife.fragments.CountFragment"
         android:label="fragment_count"
         tools:layout="@layout/fragment_count" />
+    <fragment
+        android:id="@+id/rutinaPersonalizadaFragment"
+        android:name="com.harry.fitneslife.fragments.RutinaPersonalizadaFragment"
+        android:label="fragment_rutina_personalizada"
+        tools:layout="@layout/fragment_rutina_personalizada" >
+        <action
+            android:id="@+id/action_rutinaPersonalizadaFragment_to_vistaPersonalizadaFragment"
+            app:destination="@id/vistaPersonalizadaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vistaPersonalizadaFragment"
+        android:name="com.harry.fitneslife.fragments.VistaPersonalizadaFragment"
+        android:label="fragment_vista_personalizada"
+        tools:layout="@layout/fragment_vista_personalizada" />
 </navigation>

@@ -20,7 +20,6 @@ class InicioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInicioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val con = SQLite(this, "fitlife", null, 1)
         Log.i("ciclo", "onCreateInicio")
         checkUserValues()
 
@@ -72,18 +71,19 @@ class InicioActivity : AppCompatActivity() {
     }
 
     private fun confirmarUsuario(email: String, pass: String) {
-        val con = SQLite(this, "fitlife", null, 2)
+        val con = SQLite(this, "fitlife", null, 3)
         val baseDatos = con.writableDatabase
         val fila = baseDatos.rawQuery(
-            "select nombre, correo, contraseña, imc from usuarios where correo = '$email'",
+            "select user_id, nombre, correo, contraseña, imc from usuarios where correo = '$email'",
             null
         )
         if (fila != null && fila.moveToFirst()) {
-            if (pass == fila.getString(2)) {
-                val nombre = fila.getString(0)
-                val correo = fila.getString(1)
-                var imc: String = fila.getString(3)
-                iniciarSesion(nombre, correo, imc)
+            if (pass == fila.getString(3)) {
+                val id = fila.getInt(0)
+                val nombre = fila.getString(1)
+                val correo = fila.getString(2)
+                var imc: String = fila.getString(4)
+                iniciarSesion(id ,nombre, correo, imc)
             } else {
                 showDialog(getString(R.string.contaseñaIncorrecta))
                 Toast.makeText(this, getString(R.string.contaseñaIncorrecta), Toast.LENGTH_SHORT).show()
@@ -103,7 +103,8 @@ class InicioActivity : AppCompatActivity() {
         }
     }
 
-    private fun iniciarSesion(nombre: String, correo: String, imc: String) {
+    private fun iniciarSesion(id: Int ,nombre: String, correo: String, imc: String) {
+        userData.saveId(id)
         userData.saveNombre(nombre)
         userData.saveEmail(correo)
         userData.saveImc(imc)

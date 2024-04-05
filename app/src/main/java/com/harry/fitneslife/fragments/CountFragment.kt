@@ -4,7 +4,6 @@ import android.app.Dialog
 import android.content.ContentValues
 import android.database.Cursor
 import android.os.Bundle
-import android.text.Editable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,11 +13,8 @@ import android.widget.Button
 import android.widget.TextView
 import com.harry.fitneslife.R
 import com.harry.fitneslife.baseDeDatos.SQLite
-import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
-import com.harry.fitneslife.databinding.FragmentBodyBinding
 import com.harry.fitneslife.databinding.FragmentCountBinding
-import kotlinx.coroutines.withContext
 
 
 class CountFragment : Fragment() {
@@ -48,14 +44,38 @@ class CountFragment : Fragment() {
         }
 
         binding.btnActualizar.setOnClickListener {
-            actualizarCampos()
+            val act = actualizarCampos()
+            if (act) {
+                /*userData.wipe()
+                val correo = binding.etEmail.toString()
+                val fila = datos(correo)
+                if (fila != null) {
+                    reestablecer(fila)
+                }*/
+                showDialog("Se actualizaron los datos")
+            }
+            /*actualizarCampos()*/
         }
+
+        binding.btnCancelar.setOnClickListener { initComponents() }
+    }
+
+    private fun datos(email: String): Cursor? {
+        val con = SQLite(requireContext(), "fitlife", null, 3)
+        val baseDatos = con.writableDatabase
+        val fila = baseDatos.rawQuery(
+            "select nombre, correo, imc from usuarios where correo = '$email'",
+            null
+        )
+        fila.moveToFirst()
+        return fila
+        baseDatos.close()
     }
 
     private fun buscarDatos(): Cursor? {
         val correo = userData.getEmail()
         Log.i("ciclo", correo)
-        val con = SQLite(requireContext(),"fitlife",null,2)
+        val con = SQLite(requireContext(), "fitlife", null, 3)
         val dataBase = con.writableDatabase
         val consulta = dataBase.rawQuery(
             "select nombre, correo, imc from usuarios where correo = '$correo'",
@@ -71,7 +91,7 @@ class CountFragment : Fragment() {
         val changeCorreo = binding.etEmail?.text.toString()
 
         var correo = userData.getEmail()
-        var con = SQLite(requireContext(), "fitlife", null, 2)
+        var con = SQLite(requireContext(), "fitlife", null, 3)
         var dataBase = con.writableDatabase
         val values = ContentValues()
         values.put("nombre", changeName)
@@ -83,7 +103,7 @@ class CountFragment : Fragment() {
 
     private fun showDialog(alert: String) {
         val dialog = Dialog(requireContext())
-        dialog.setContentView(R.layout.dialog_alert)
+        dialog.setContentView(R.layout.dialog_alert_succesful)
         dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
 
         val btn: Button = dialog.findViewById(R.id.btnConfirmacion)
@@ -93,5 +113,12 @@ class CountFragment : Fragment() {
         btn.setOnClickListener { dialog.hide() }
 
         dialog.show()
+    }
+
+    private fun reestablecer(fila: Cursor) {
+        userData.saveNombre(fila.getString(0))
+        userData.saveEmail(fila.getString(1))
+        userData.saveImc(fila.getString(2))
+        initComponents()
     }
 }

@@ -94,4 +94,12 @@
 
     <string name="todoBien">Todo está correcto, digo yoo...</string>
 
+    <string name="titleAlertsSuce">Operación exitosa</string>
+
+    <string name="Personalizado">Tus rutinas perosonalizadas</string>
+
+    <string name="titleDialogRutina">Crea tu nueva rutina</string>
+    <string name="titleEtRutina">Nombre de tu rutina</string>
+    <string name="titleBtnRutina">Crear rutina</string>
+
 </resources>

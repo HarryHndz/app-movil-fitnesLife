@@ -84,4 +84,22 @@
     <string name="descripcion_sobrepeso">Estás por encima de lo óptimo para tu peso y altura.</string>
     <string name="title_obesidad">Obesidad</string>
     <string name="descripcion_obesidad">Estás muy por encima de lo óptimo para tu peso y altura.</string>
+
+    <string name="nombre">Nombre del usuario</string>
+    <string name="correo">Correo electrónico</string>
+    <string name="imc">Indice de masa corporar(IMC)</string>
+
+    <string name="actualizar">Actualizar</string>
+    <string name="cancelar">Cancelar</string>
+
+    <string name="todoBien">Todo está correcto, digo yoo...</string>
+
+    <string name="titleAlertsSuce">Operación exitosa</string>
+
+    <string name="Personalizado">Tus rutinas perosonalizadas</string>
+
+    <string name="titleDialogRutina">Creatunuevarutina</string>
+    <string name="titleEtRutina">Nombredeturutina</string>
+    <string name="titleBtnRutina">Crearrutina</string>
+
 </resources>

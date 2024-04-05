@@ -11,7 +11,19 @@ class SQLite(
     version: Int
 ) : SQLiteOpenHelper(context, name, factory, version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("create table usuarios (user_id int primary key , nombre text, correo text, contraseña text, imc double)")
+        db?.execSQL("create table usuarios (user_id INTEGER primary key autoincrement," +
+                "nombre text" +
+                ", correo text" +
+                ", contraseña text" +
+                ", imc double)")
+        db?.execSQL("create table rutinasPer (id_rutina INTEGER primary key autoincrement, " +
+                "user_id INTEGER," +
+                "nombre text," +
+                "foreign key (user_id) references usuarios(user_id))")
+        db?.execSQL("create table ejercicios (rutina_id INTEGER primary key autoincrement, " +
+                "id_rutina INTEGER," +
+                "nombre text," +
+                "foreign key (id_rutina) references rutinasPer(id_rutina))")
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
