@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.harry.fitneslife.R
 import com.harry.fitneslife.databinding.FragmentEjercicioBinding
 import com.harry.fitneslife.databinding.FragmentRutinaBinding
@@ -17,9 +18,7 @@ class RutinaFragment : Fragment() {
     private var _bindig : FragmentRutinaBinding? = null
     private val binding get() = _bindig!!
 
-    /*val retro= RetroFitHelper.buildRetro()
-    val listExercise = mutableListOf<ExerciseResponseItem>()
-*/
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,22 +27,19 @@ class RutinaFragment : Fragment() {
         return binding.root
     }
 
-    /*override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        *//*initCorrutina()*//*
-    }*/
 
-    /*private fun initCorrutina() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            val request = retro.getEjercicios()
-            if (request.isSuccessful){
-                activity?.runOnUiThread {
-                    request.body()?.forEach { elemet ->
-                        binding.txPrueba?.append(elemet.nombre)
-                    }
-                    //val fotos: List<String> = request.images[2]
-                }
-            }
+        binding.viewPrin.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routinePrincipianteFragment)
         }
-    }*/
+        binding.viewInter.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routineIntermedioFragment)
+        }
+        binding.viewAvan.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routineAvanzadoFragment)
+        }
+    }
+
+
 }

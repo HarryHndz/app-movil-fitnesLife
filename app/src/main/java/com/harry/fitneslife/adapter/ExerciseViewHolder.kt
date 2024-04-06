@@ -13,9 +13,10 @@ class ExerciseViewHolder(view:View): RecyclerView.ViewHolder(view) {
     //val onClickItem : ((ExerciseResponse)-> Unit)? = null
 
 
-    fun render(item: ExerciseResponse){
+    fun render(item: ExerciseResponse,onClickListener: (ExerciseResponse)->Unit){
         bindig.nombreEjercicio.text=item.nombre
         Picasso.get().load(item.imagen).into(bindig.imgEjercicio)
+        itemView.setOnClickListener { onClickListener(item) }
 
     }
 

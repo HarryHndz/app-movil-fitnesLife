@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.harry.fitneslife.EjerciciosData.ExerciseResponse
 import com.harry.fitneslife.R
 
-class ExerciseAdapter(private val Exercises:ArrayList<ExerciseResponse>): RecyclerView.Adapter<ExerciseViewHolder>() {
+class ExerciseAdapter(private val Exercises:ArrayList<ExerciseResponse>,private val onClickListener:(ExerciseResponse)->Unit): RecyclerView.Adapter<ExerciseViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ExerciseViewHolder {
         val layout = LayoutInflater.from(parent.context)
@@ -19,6 +19,6 @@ class ExerciseAdapter(private val Exercises:ArrayList<ExerciseResponse>): Recycl
 
     override fun onBindViewHolder(holder: ExerciseViewHolder, position: Int) {
         val item = Exercises[position]
-        holder.render(item)
+        holder.render(item,onClickListener)
     }
 }

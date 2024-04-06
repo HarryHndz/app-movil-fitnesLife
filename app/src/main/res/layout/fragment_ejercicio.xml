@@ -4,13 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.EjercicioFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/grey_low">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/buscador"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="25dp">
+
+    </androidx.appcompat.widget.SearchView>
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleEjercicios"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 

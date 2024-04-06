@@ -73,6 +73,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/img_home"
+                android:scaleType="fitXY"
+                android:adjustViewBounds="true"
                 app:layout_constraintTop_toBottomOf="@+id/home_pp">
 
             </ImageView>
@@ -116,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title_card1_home"
                 android:textColor="@color/black"
-                android:textSize="25sp"></TextView>
+                android:textSize="25sp">
+
+            </TextView>
 
             <TextView
                 android:layout_width="250dp"
