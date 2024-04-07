@@ -97,13 +97,14 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun registrar(nombre: String, email: String, pass: String) {
-        var con= SQLite(this, "fitlife", null, 1)
+        var con= SQLite(this, "fitlife", null, 4)
         var dataBase = con.writableDatabase
         var registro = ContentValues()
 
         registro.put("nombre",nombre)
         registro.put("correo",email)
         registro.put("contraseña",pass)
+        registro.put("imc","nada")
         dataBase.insert("usuarios",null,registro)
 
         Toast.makeText(this,getString(R.string.exito), Toast.LENGTH_LONG).show()
@@ -113,7 +114,7 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun buscarRegistro(email:String):Boolean {
-        val con=SQLite(this, "fitlife", null, 1)
+        val con=SQLite(this, "fitlife", null, 4)
         val baseDatos=con.writableDatabase
         val fila = baseDatos.rawQuery("select nombre, correo from usuarios where correo = '$email'", null)
         if (fila != null && fila.moveToFirst()) {

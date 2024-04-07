@@ -7,4 +7,12 @@
     <color name="grey_components">#45474B</color>
     <color name="grey_low" >#909296</color>
     <color name="transparente">#00FFFFFF</color>
+
+    <color name="peso_bajo">#FFEB3B</color>
+    <color name="peso_normal">#4CAF50</color>
+    <color name="sobrepeso">#FF5722</color>
+    <color name="obesidad">#FF1100</color>
+
+    <color name="background_component">#1D1E33</color>
+    <color name="background_component_selected">#FF111328</color>
 </resources>

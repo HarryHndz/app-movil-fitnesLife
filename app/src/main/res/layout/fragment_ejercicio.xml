@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.EjercicioFragment">
+    tools:context=".fragments.EjercicioFragment"
+    android:orientation="vertical"
+    android:background="@color/grey_low">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/buscador"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="este es el fragment de ejercicios" />
+        android:layout_height="40dp"
+        android:layout_marginBottom="25dp">
 
-</FrameLayout>
+    </androidx.appcompat.widget.SearchView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleEjercicios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>
