@@ -20,7 +20,7 @@ class SQLite(
                 "user_id INTEGER," +
                 "nombre text," +
                 "foreign key (user_id) references usuarios(user_id))")
-        db?.execSQL("create table ejercicios (rutina_id INTEGER primary key autoincrement, " +
+        db?.execSQL("create table ejercicios (ejercicio_id INTEGER primary key autoincrement, " +
                 "id_rutina INTEGER," +
                 "nombre text," +
                 "foreign key (id_rutina) references rutinasPer(id_rutina))")
@@ -28,6 +28,8 @@ class SQLite(
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS usuarios")
+        db?.execSQL("DROP TABLE IF EXISTS rutinasPer")
+        db?.execSQL("DROP TABLE IF EXISTS ejercicios")
         onCreate(db)
     }
 }

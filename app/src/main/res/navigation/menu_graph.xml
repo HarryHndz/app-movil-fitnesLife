@@ -61,5 +61,9 @@
         android:id="@+id/vistaPersonalizadaFragment"
         android:name="com.harry.fitneslife.fragments.VistaPersonalizadaFragment"
         android:label="fragment_vista_personalizada"
-        tools:layout="@layout/fragment_vista_personalizada" />
+        tools:layout="@layout/fragment_vista_personalizada">
+        <argument
+            android:name="itemId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

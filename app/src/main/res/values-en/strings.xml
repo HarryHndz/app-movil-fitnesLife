@@ -98,8 +98,11 @@
 
     <string name="Personalizado">Tus rutinas perosonalizadas</string>
 
-    <string name="titleDialogRutina">Creatunuevarutina</string>
-    <string name="titleEtRutina">Nombredeturutina</string>
-    <string name="titleBtnRutina">Crearrutina</string>
+    <string name="titleDialogRutina">Crea tu nueva rutina</string>
+    <string name="titleEtRutina">Nombre de tu rutina</string>
+    <string name="titleBtnRutina">Crear rutina</string>
+
+    <string name="rutinasPersonalizadas">Tus rutinas personalizada</string>
+
 
 </resources>

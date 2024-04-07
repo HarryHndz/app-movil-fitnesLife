@@ -102,4 +102,6 @@
     <string name="titleEtRutina">Nombre de tu rutina</string>
     <string name="titleBtnRutina">Crear rutina</string>
 
+    <string name="rutinasPersonalizadas">Tus rutinas personalizada</string>
+
 </resources>
