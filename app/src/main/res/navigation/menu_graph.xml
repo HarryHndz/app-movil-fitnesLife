@@ -9,7 +9,11 @@
         android:id="@+id/navEjercicios"
         android:name="com.harry.fitneslife.fragments.EjercicioFragment"
         android:label="fragment_ejercicio"
-        tools:layout="@layout/fragment_ejercicio" />
+        tools:layout="@layout/fragment_ejercicio" >
+        <action
+            android:id="@+id/action_navEjercicios_to_detailExerFragment"
+            app:destination="@id/detailExerFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navRutinas"
         android:name="com.harry.fitneslife.fragments.RutinaFragment"
@@ -19,6 +23,15 @@
         <action
             android:id="@+id/action_navRutinas_to_rutinaPersonalizadaFragment"
             app:destination="@id/rutinaPersonalizadaFragment" />
+        <action
+            android:id="@+id/action_navRutinas_to_routineAvanzadoFragment"
+            app:destination="@id/routineAvanzado" />
+        <action
+            android:id="@+id/action_navRutinas_to_routineIntermedioFragment"
+            app:destination="@id/routineIntermedio" />
+        <action
+            android:id="@+id/action_navRutinas_to_routinePrincipianteFragment"
+            app:destination="@id/routinePrincipiante" />
     </fragment>
     <fragment
         android:id="@+id/navInicio"
@@ -66,4 +79,29 @@
             android:name="itemId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/detailExerFragment"
+        android:name="com.harry.fitneslife.fragments.DetailExerFragment"
+        android:label="fragment_detail_exer"
+        tools:layout="@layout/fragment_detail_exer" >
+        <argument
+            android:name="nombreEjer"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/routineAvanzado"
+        android:name="com.harry.fitneslife.fragments.RoutineAvanzadoFragment"
+        android:label="fragment_routine_avanzado"
+        tools:layout="@layout/fragment_routine_avanzado" />
+    <fragment
+        android:id="@+id/routineIntermedio"
+        android:name="com.harry.fitneslife.fragments.RoutineIntermedioFragment"
+        android:label="fragment_routine_intermedio"
+        tools:layout="@layout/fragment_routine_intermedio" />
+    <fragment
+        android:id="@+id/routinePrincipiante"
+        android:name="com.harry.fitneslife.fragments.RoutinePrincipianteFragment"
+        android:label="fragment_routine_principiante"
+        tools:layout="@layout/fragment_routine_principiante" />
 </navigation>

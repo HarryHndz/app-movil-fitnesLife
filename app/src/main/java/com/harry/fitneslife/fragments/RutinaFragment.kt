@@ -18,9 +18,7 @@ class RutinaFragment : Fragment() {
     private var _bindig : FragmentRutinaBinding? = null
     private val binding get() = _bindig!!
 
-    /*val retro= RetroFitHelper.buildRetro()
-    val listExercise = mutableListOf<ExerciseResponseItem>()
-*/
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,12 +29,19 @@ class RutinaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initComponent()
-    }
 
-    private fun initComponent() {
+        binding.viewPrin.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routinePrincipianteFragment)
+        }
+        binding.viewInter.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routineIntermedioFragment)
+        }
+        binding.viewAvan.setOnClickListener {
+            findNavController().navigate(R.id.action_navRutinas_to_routineAvanzadoFragment)
+        }
         binding.viewPerso.setOnClickListener {
             findNavController().navigate(R.id.action_navRutinas_to_rutinaPersonalizadaFragment)
         }
     }
+
 }
