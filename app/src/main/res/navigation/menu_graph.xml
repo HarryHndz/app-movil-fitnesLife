@@ -90,11 +90,6 @@
             app:nullable="true" />
     </fragment>
     <fragment
-        android:id="@+id/routineAvanzado"
-        android:name="com.harry.fitneslife.fragments.RoutineAvanzadoFragment"
-        android:label="fragment_routine_avanzado"
-        tools:layout="@layout/fragment_routine_avanzado" />
-    <fragment
         android:id="@+id/routineIntermedio"
         android:name="com.harry.fitneslife.fragments.RoutineIntermedioFragment"
         android:label="fragment_routine_intermedio"
@@ -104,4 +99,12 @@
         android:name="com.harry.fitneslife.fragments.RoutinePrincipianteFragment"
         android:label="fragment_routine_principiante"
         tools:layout="@layout/fragment_routine_principiante" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/routineAvanzado">
+        <fragment
+            android:id="@+id/routineAvanzado"
+            android:name="com.harry.fitneslife.fragments.RoutineAvanzadoFragment"
+            android:label="fragment_routine_avanzado"
+            tools:layout="@layout/fragment_routine_avanzado" />
+    </navigation>
 </navigation>
