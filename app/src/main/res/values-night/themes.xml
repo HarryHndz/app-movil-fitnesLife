@@ -4,4 +4,8 @@
         <item name="colorPrimary">@color/grey_components</item>
         <item name="android:statusBarColor">?attr/colorPrimary</item>
     </style>
+
+    <style name="SplashScreen" parent="Theme.FitnesLife">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 </resources>

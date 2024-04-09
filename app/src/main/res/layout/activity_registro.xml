@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_app"
+    android:background="@color/white"
     tools:context=".activities.RegistroActivity">
 
     <LinearLayout
@@ -12,20 +12,32 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/AppName"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:textStyle="italic" />
+
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
             android:id="@+id/TxtGeneral"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="10dp"
             android:text="@string/title_register"
             android:textColor="@color/black"
-            android:textSize="45sp" />
+            android:textSize="35sp" />
 
         <TextView
             android:id="@+id/textName"
@@ -33,13 +45,13 @@
             android:layout_height="wrap_content"
             android:text="@string/title_name"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
             app:cardBackgroundColor="@color/grey_low"
             app:cardCornerRadius="10dp">
 
@@ -49,7 +61,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_person"
                     app:tint="@color/orange_icons">
@@ -59,7 +71,7 @@
                 <EditText
                     android:id="@+id/EditName"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="40dp"
                     android:background="@android:color/transparent"
                     android:maxLines="1"
                     android:singleLine="true"
@@ -74,13 +86,13 @@
             android:layout_height="wrap_content"
             android:text="@string/title_email"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
             app:cardBackgroundColor="@color/grey_low"
             app:cardCornerRadius="10dp">
 
@@ -90,7 +102,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_email"
                     app:tint="@color/orange_icons">
@@ -100,7 +112,7 @@
                 <EditText
                     android:id="@+id/EditEmail"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="40dp"
                     android:background="@android:color/transparent"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
@@ -117,13 +129,13 @@
             android:layout_height="wrap_content"
             android:text="@string/title_password"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="10dp"
             app:cardBackgroundColor="@color/grey_low"
             app:cardCornerRadius="10dp">
 
@@ -134,7 +146,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_lock"
                     app:tint="@color/orange_icons">
@@ -144,7 +156,7 @@
                 <EditText
                     android:id="@+id/EditPassword"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="40dp"
                     android:background="@android:color/transparent"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -161,16 +173,14 @@
             android:layout_height="wrap_content"
             android:text="@string/title_rptPassword"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="17dp"
+            android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/grey_low"
             app:cardCornerRadius="10dp">
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,7 +188,7 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="60dp"
+                    android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:src="@drawable/ic_lock"
                     app:tint="@color/orange_icons">
@@ -188,7 +198,7 @@
                 <EditText
                     android:id="@+id/EditRptPass"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="40dp"
                     android:background="@android:color/transparent"
                     android:inputType="textPassword"
                     android:maxLines="1"
@@ -200,13 +210,13 @@
 
         <Button
             android:id="@+id/BtnSend"
-            android:layout_width="220dp"
-            android:layout_height="70dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:backgroundTint="@color/orange_icons"
             android:text="@string/title_register"
-            android:textSize="22sp" />
+            android:textSize="18sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -243,7 +253,7 @@
             android:id="@+id/textIni"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:text="@string/title_logIn"
             android:textColor="@color/black"
             android:textSize="22sp" />

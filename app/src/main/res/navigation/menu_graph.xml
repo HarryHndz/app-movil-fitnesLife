@@ -78,6 +78,9 @@
         <argument
             android:name="itemId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_vistaPersonalizadaFragment_to_actionRutinaPer"
+            app:destination="@id/actionRutinaPer" />
     </fragment>
     <fragment
         android:id="@+id/detailExerFragment"
@@ -104,4 +107,14 @@
         android:name="com.harry.fitneslife.fragments.RoutinePrincipianteFragment"
         android:label="fragment_routine_principiante"
         tools:layout="@layout/fragment_routine_principiante" />
+    <fragment
+        android:id="@+id/actionRutinaPer"
+        android:name="com.harry.fitneslife.fragments.ActionRutinaPer"
+        android:label="fragment_action_rutina_per"
+        tools:layout="@layout/fragment_action_rutina_per">
+        <argument
+            android:name="nombreEjer"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

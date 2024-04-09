@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.SearchView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -27,6 +28,7 @@ import com.harry.fitneslife.EjerciciosData.ExerciseResponse
 import com.harry.fitneslife.R
 import com.harry.fitneslife.adapter.EjerPerAdapter
 import com.harry.fitneslife.adapter.ExerciseAdapter
+import com.harry.fitneslife.adapter.buscadorPersonalizado.BuscadorAdapter
 import com.harry.fitneslife.adapter.ejerciciosPersonalizados.EjerciciosPerAdapter
 import com.harry.fitneslife.adapter.rutinaAvanzado.AvanzadoAdapter
 import com.harry.fitneslife.baseDeDatos.SQLite
@@ -40,10 +42,9 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
 
     private lateinit var dbref : DatabaseReference
     private lateinit var listEjercicios : ArrayList<ExerciseResponse>
-    private lateinit var myAdapter : ExerciseAdapter
+    private lateinit var myAdapter : BuscadorAdapter
 
     private lateinit var dialog : Dialog
-    private lateinit var listRutinas: ArrayList<String>
     private val args: VistaPersonalizadaFragmentArgs by navArgs()
 
     private lateinit var dbrefRutinas : DatabaseReference
@@ -71,7 +72,11 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
     }
 
     private fun initComponent() {
-        ejercicioAdapter = EjerciciosPerAdapter(listRutinaEjer)
+        listEjercicios.clear()
+        listRutinaEjer.clear()
+        ejercicioAdapter = EjerciciosPerAdapter(listRutinaEjer) { ejercicio ->
+            onSelect(ejercicio)
+        }
 
         binding.rvEjerciciosPerso.layoutManager= LinearLayoutManager(
             requireContext(),LinearLayoutManager.VERTICAL,false)
@@ -90,6 +95,12 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
         } else {
 
         }
+    }
+
+
+    fun onSelect(ejercicio: ExerciseResponse){
+        val nombreEjercicio = ejercicio.nombre
+        findNavController().navigate(VistaPersonalizadaFragmentDirections.actionVistaPersonalizadaFragmentToActionRutinaPer(nombreEjer = nombreEjercicio))
     }
 
     private fun getEjerRu(nombreRutina: String) {
@@ -126,10 +137,11 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
 
     private fun getEjercicios(): Cursor? {
         val itemId = args.itemId
+        userData.saveIdRutinaPer(itemId)
         val idUser = userData.getId()
         Log.i("ciclo", itemId.toString())
         Log.i("ciclo", idUser.toString())
-        val con = SQLite(requireContext(), "fitlife", null, 4)
+        val con = SQLite(requireContext(), "fitlife", null, 5)
         val dataBase = con.writableDatabase
         val consulta = dataBase.rawQuery( """
             select * from ejercicios as ejer
@@ -151,6 +163,7 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
     private fun showDialog() {
         dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.dialog_search_rutina)
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
 
         val buscador = dialog.findViewById<androidx.appcompat.widget.SearchView>(R.id.buscador)
         buscador.setOnQueryTextListener(this)
@@ -159,7 +172,7 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
 
         rvEjercicios.layoutManager= GridLayoutManager(
             requireContext(),2)
-        myAdapter = ExerciseAdapter(listEjercicios) { ejercicio ->
+        myAdapter = BuscadorAdapter(listEjercicios) { ejercicio ->
             onSelectEjercicio(ejercicio)
         }
         rvEjercicios.adapter  = myAdapter
@@ -219,20 +232,28 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
         val nombreEjercicio = ejercicio.nombre
         val itemId = args.itemId
 
-        var con= SQLite(requireContext(), "fitlife", null, 4)
+        var con= SQLite(requireContext(), "fitlife", null, 5)
         var dataBase = con.writableDatabase
         var ejer = ContentValues()
 
-        ejer.put("id_rutina",itemId)
-        ejer.put("nombre",nombreEjercicio)
-        dataBase.insert("ejercicios",null,ejer)
+        val fila = dataBase.rawQuery("select * from ejercicios where nombre = '$nombreEjercicio'", null)
 
-        dataBase.close()
-        listRutinaEjer.clear()
-        listEjercicios.clear()
+        if (fila != null && fila.moveToFirst()) {
+            mostrarAlerta(getString(R.string.dataExist))
+        } else {
+            ejer.put("id_rutina",itemId)
+            ejer.put("nombre",nombreEjercicio)
+            dataBase.insert("ejercicios",null,ejer)
 
-        initComponent()
-        dialog.hide()
+            dataBase.close()
+            listRutinaEjer.clear()
+            listEjercicios.clear()
+
+            initComponent()
+            dialog.hide()
+        }
+
+
 
     }
 
@@ -250,5 +271,20 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
     override fun onQueryTextChange(newText: String?): Boolean {
         newText?.let { filterData(it) }
         return true
+    }
+
+    private fun mostrarAlerta(alert: String) {
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.dialog_alert)
+
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
+
+        val btn: Button = dialog.findViewById(R.id.btnConfirmacion)
+        val tvWarning: TextView = dialog.findViewById(R.id.tvWarning)
+        tvWarning.text = alert
+
+        btn.setOnClickListener { dialog.hide() }
+
+        dialog.show()
     }
 }

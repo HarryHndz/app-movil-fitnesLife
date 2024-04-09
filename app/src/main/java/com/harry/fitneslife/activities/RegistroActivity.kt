@@ -97,7 +97,7 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun registrar(nombre: String, email: String, pass: String) {
-        var con= SQLite(this, "fitlife", null, 4)
+        var con= SQLite(this, "fitlife", null, 5)
         var dataBase = con.writableDatabase
         var registro = ContentValues()
 
@@ -114,7 +114,7 @@ class RegistroActivity : AppCompatActivity() {
     }
 
     private fun buscarRegistro(email:String):Boolean {
-        val con=SQLite(this, "fitlife", null, 4)
+        val con=SQLite(this, "fitlife", null, 5)
         val baseDatos=con.writableDatabase
         val fila = baseDatos.rawQuery("select nombre, correo from usuarios where correo = '$email'", null)
         if (fila != null && fila.moveToFirst()) {

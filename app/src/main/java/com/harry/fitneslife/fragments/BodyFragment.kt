@@ -115,7 +115,7 @@ class BodyFragment : Fragment() {
     }
 
     private fun guardarDatos(result: Double) {
-        var con = SQLite(requireContext(), "fitlife", null, 4)
+        var con = SQLite(requireContext(), "fitlife", null, 5)
         var dataBase = con.writableDatabase
         var correo = userData.getEmail()
         val values = ContentValues()

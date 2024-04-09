@@ -68,7 +68,7 @@ class RutinaPersonalizadaFragment : Fragment(), OnItemClickListener {
 
     private fun crearRutina(nombre: String) {
         val id = userData.getId()
-        var con= SQLite(requireContext(), "fitlife", null, 4)
+        var con= SQLite(requireContext(), "fitlife", null, 5)
         var dataBase = con.writableDatabase
         var registro = ContentValues()
 
@@ -114,7 +114,7 @@ class RutinaPersonalizadaFragment : Fragment(), OnItemClickListener {
         val dataList = mutableListOf<Personalizadas>()
         val id = userData.getId()
         Log.i("ciclo", id.toString())
-        val con = SQLite(requireContext(), "fitlife", null, 4)
+        val con = SQLite(requireContext(), "fitlife", null, 5)
         val dataBase = con.writableDatabase
         val consulta = dataBase.rawQuery(
             "select * from rutinasPer where user_id = '$id'",

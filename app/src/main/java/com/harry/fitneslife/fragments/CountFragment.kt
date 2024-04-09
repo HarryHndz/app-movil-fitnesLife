@@ -61,7 +61,7 @@ class CountFragment : Fragment() {
     }
 
     private fun datos(email: String): Cursor? {
-        val con = SQLite(requireContext(), "fitlife", null, 4)
+        val con = SQLite(requireContext(), "fitlife", null, 5)
         val baseDatos = con.writableDatabase
         val fila = baseDatos.rawQuery(
             "select nombre, correo, imc from usuarios where correo = '$email'",
@@ -75,7 +75,7 @@ class CountFragment : Fragment() {
     private fun buscarDatos(): Cursor? {
         val correo = userData.getEmail()
         Log.i("ciclo", correo)
-        val con = SQLite(requireContext(), "fitlife", null, 4)
+        val con = SQLite(requireContext(), "fitlife", null, 5)
         val dataBase = con.writableDatabase
         val consulta = dataBase.rawQuery(
             "select nombre, correo, imc from usuarios where correo = '$correo'",
@@ -91,7 +91,7 @@ class CountFragment : Fragment() {
         val changeCorreo = binding.etEmail?.text.toString()
 
         var correo = userData.getEmail()
-        var con = SQLite(requireContext(), "fitlife", null, 4)
+        var con = SQLite(requireContext(), "fitlife", null, 5)
         var dataBase = con.writableDatabase
         val values = ContentValues()
         values.put("nombre", changeName)
