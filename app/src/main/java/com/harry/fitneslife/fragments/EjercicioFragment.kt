@@ -45,6 +45,7 @@ class EjercicioFragment : Fragment(), SearchView.OnQueryTextListener {
         binding.buscador.setOnQueryTextListener(this)
         init()
         getDataEjercicio("")
+
     }
     private  fun init(){
         binding.recycleEjercicios.layoutManager= GridLayoutManager(
