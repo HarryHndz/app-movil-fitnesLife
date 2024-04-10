@@ -6,13 +6,6 @@
         <item name="android:statusBarColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="SplashScreen" parent="Theme.FitnesLife">
-        <!--<item name="android:windowBackground">@drawable/splashscreen</item>-->
-        <item name="windowSplashScreenBackground">@color/white</item>
-        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-        <item name="postSplashScreenTheme">@style/Theme.FitnesLife</item>
-    </style>
-
     <style name="menu" parent="Theme.FitnesLife">
         <item name="android:textSize">20sp</item>
     </style>

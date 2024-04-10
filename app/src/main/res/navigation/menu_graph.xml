@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navEjercicios"
         android:name="com.harry.fitneslife.fragments.EjercicioFragment"
-        android:label="fragment_ejercicio"
+        android:label=""
         tools:layout="@layout/fragment_ejercicio" >
         <action
             android:id="@+id/action_navEjercicios_to_detailExerFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/navRutinas"
         android:name="com.harry.fitneslife.fragments.RutinaFragment"
-        android:label="fragment_rutina"
+        android:label=""
         tools:layout="@layout/fragment_rutina">
 
         <action
@@ -36,7 +36,7 @@
     <fragment
         android:id="@+id/navInicio"
         android:name="com.harry.fitneslife.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label=""
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_navInicio_to_navRutinas"
@@ -54,17 +54,17 @@
     <fragment
         android:id="@+id/navCuerpo"
         android:name="com.harry.fitneslife.fragments.BodyFragment"
-        android:label="fragment_body"
+        android:label=""
         tools:layout="@layout/fragment_body" />
     <fragment
         android:id="@+id/navCuenta"
         android:name="com.harry.fitneslife.fragments.CountFragment"
-        android:label="fragment_count"
+        android:label=""
         tools:layout="@layout/fragment_count" />
     <fragment
         android:id="@+id/rutinaPersonalizadaFragment"
         android:name="com.harry.fitneslife.fragments.RutinaPersonalizadaFragment"
-        android:label="fragment_rutina_personalizada"
+        android:label=""
         tools:layout="@layout/fragment_rutina_personalizada" >
         <action
             android:id="@+id/action_rutinaPersonalizadaFragment_to_vistaPersonalizadaFragment"
@@ -73,7 +73,7 @@
     <fragment
         android:id="@+id/vistaPersonalizadaFragment"
         android:name="com.harry.fitneslife.fragments.VistaPersonalizadaFragment"
-        android:label="fragment_vista_personalizada"
+        android:label=""
         tools:layout="@layout/fragment_vista_personalizada">
         <argument
             android:name="itemId"
@@ -85,7 +85,7 @@
     <fragment
         android:id="@+id/detailExerFragment"
         android:name="com.harry.fitneslife.fragments.DetailExerFragment"
-        android:label="fragment_detail_exer"
+        android:label=""
         tools:layout="@layout/fragment_detail_exer" >
         <argument
             android:name="nombreEjer"
@@ -95,22 +95,22 @@
     <fragment
         android:id="@+id/routineAvanzado"
         android:name="com.harry.fitneslife.fragments.RoutineAvanzadoFragment"
-        android:label="fragment_routine_avanzado"
+        android:label=""
         tools:layout="@layout/fragment_routine_avanzado" />
     <fragment
         android:id="@+id/routineIntermedio"
         android:name="com.harry.fitneslife.fragments.RoutineIntermedioFragment"
-        android:label="fragment_routine_intermedio"
+        android:label=""
         tools:layout="@layout/fragment_routine_intermedio" />
     <fragment
         android:id="@+id/routinePrincipiante"
         android:name="com.harry.fitneslife.fragments.RoutinePrincipianteFragment"
-        android:label="fragment_routine_principiante"
+        android:label=""
         tools:layout="@layout/fragment_routine_principiante" />
     <fragment
         android:id="@+id/actionRutinaPer"
         android:name="com.harry.fitneslife.fragments.ActionRutinaPer"
-        android:label="fragment_action_rutina_per"
+        android:label=""
         tools:layout="@layout/fragment_action_rutina_per">
         <argument
             android:name="nombreEjer"
