@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -48,6 +49,10 @@ class RoutinePrincipianteFragment : Fragment() {
         )
         binding.listRutinaEjer.adapter =ejercicioAdapter
         getRutinaEjercicio()
+
+        binding.btnEmpezarRut.setOnClickListener {
+            findNavController().navigate(R.id.action_routinePrincipiante_to_cronometroRutinaFragment)
+        }
     }
 
     private fun getRutinaEjercicio() {
@@ -79,5 +84,7 @@ class RoutinePrincipianteFragment : Fragment() {
         })
 
     }
+
+
 
 }

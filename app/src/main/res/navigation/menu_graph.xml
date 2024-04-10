@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/navEjercicios"
         android:name="com.harry.fitneslife.fragments.EjercicioFragment"
-        android:label=""
+        android:label="fragment_ejercicio"
         tools:layout="@layout/fragment_ejercicio" >
         <action
             android:id="@+id/action_navEjercicios_to_detailExerFragment"
@@ -62,27 +62,6 @@
         android:label=""
         tools:layout="@layout/fragment_count" />
     <fragment
-        android:id="@+id/rutinaPersonalizadaFragment"
-        android:name="com.harry.fitneslife.fragments.RutinaPersonalizadaFragment"
-        android:label=""
-        tools:layout="@layout/fragment_rutina_personalizada" >
-        <action
-            android:id="@+id/action_rutinaPersonalizadaFragment_to_vistaPersonalizadaFragment"
-            app:destination="@id/vistaPersonalizadaFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/vistaPersonalizadaFragment"
-        android:name="com.harry.fitneslife.fragments.VistaPersonalizadaFragment"
-        android:label=""
-        tools:layout="@layout/fragment_vista_personalizada">
-        <argument
-            android:name="itemId"
-            app:argType="integer" />
-        <action
-            android:id="@+id/action_vistaPersonalizadaFragment_to_actionRutinaPer"
-            app:destination="@id/actionRutinaPer" />
-    </fragment>
-    <fragment
         android:id="@+id/detailExerFragment"
         android:name="com.harry.fitneslife.fragments.DetailExerFragment"
         android:label=""
@@ -117,4 +96,9 @@
             app:argType="string"
             app:nullable="true" />
     </fragment>
+    <fragment
+        android:id="@+id/cronometroRutinaFragment"
+        android:name="com.harry.fitneslife.fragments.CronometroRutinaFragment"
+        android:label="fragment_cronometro_rutina"
+        tools:layout="@layout/fragment_cronometro_rutina" />
 </navigation>
