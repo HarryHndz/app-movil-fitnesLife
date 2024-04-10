@@ -18,6 +18,7 @@
         app:tint="@color/orange_icons" />
 
     <TextView
+        android:id="@+id/tvConfirmacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"

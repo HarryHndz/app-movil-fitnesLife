@@ -28,7 +28,6 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         NavegarBoton()
-        cerrarSesion()
         initComponent()
     }
 
@@ -46,16 +45,6 @@ class HomeFragment : Fragment() {
         }
     }
 
-    fun cerrarSesion(){
-        binding.back.setOnClickListener {
-            userData.wipe()
-            val intent = Intent(activity, InicioActivity::class.java)
-            startActivity(intent)
-        }
-        val name = userData.getName()
-        binding.tvSaludo.text = name
-
-    }
 
 
 }

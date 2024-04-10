@@ -112,4 +112,6 @@
 
     <string name="AppName">FitnesLife</string>
 
+    <string name="confirmLog">¿Estás seguro de cerrar sesión?</string>
+
 </resources>

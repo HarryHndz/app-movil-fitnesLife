@@ -2,6 +2,7 @@ package com.harry.fitneslife.fragments
 
 import android.app.Dialog
 import android.content.ContentValues
+import android.content.Intent
 import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.harry.fitneslife.R
+import com.harry.fitneslife.activities.InicioActivity
 import com.harry.fitneslife.baseDeDatos.SQLite
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.FragmentCountBinding
@@ -58,6 +60,8 @@ class CountFragment : Fragment() {
         }
 
         binding.btnCancelar.setOnClickListener { initComponents() }
+
+        binding.back.setOnClickListener { confirmarDialog() }
     }
 
     private fun datos(email: String): Cursor? {
@@ -121,4 +125,32 @@ class CountFragment : Fragment() {
         userData.saveImc(fila.getString(2))
         initComponents()
     }
+
+    fun cerrarSesion() {
+        userData.wipe()
+        val intent = Intent(activity, InicioActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun confirmarDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.setContentView(R.layout.dialog_confirmar)
+
+        dialog.window?.setBackgroundDrawableResource(R.drawable.dialog_border)
+
+        val btnConfirm: Button = dialog.findViewById(R.id.btnConfirmacion)
+        val btnDelete: Button = dialog.findViewById(R.id.btnEliminar)
+        val tvConfirm: TextView = dialog.findViewById(R.id.tvConfirmacion)
+
+        tvConfirm.text = getString(R.string.confirmLog)
+
+        btnConfirm.setOnClickListener { dialog.hide() }
+        btnDelete.setOnClickListener {
+            dialog.hide()
+            cerrarSesion()
+        }
+
+        dialog.show()
+    }
+
 }
