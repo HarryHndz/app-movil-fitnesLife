@@ -94,4 +94,7 @@
 
     <string name="todoBien">Todo está correcto, digo yoo...</string>
 
+    <string name="StartRutina">Comenzar Entrenamiento</string>
+    <string name="StopRutina">Reanudar Rutina</string>
+
 </resources>
