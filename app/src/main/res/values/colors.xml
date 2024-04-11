@@ -3,6 +3,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange_icons">#F48014</color>
+    <color name="orange_bajo">#F5A458</color>
     <color name="background_app">#F5F7F8</color>
     <color name="grey_components">#45474B</color>
     <color name="grey_low" >#909296</color>

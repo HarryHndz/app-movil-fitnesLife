@@ -7,22 +7,56 @@
     tools:context=".fragments.CronometroRutinaFragment">
 
     <TextView
+
         android:id="@+id/textCrono"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:text="Iniciar Rutina">
+        android:text="Ejercicios a realizar"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:paddingVertical="10dp">
 
     </TextView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reciEjerRunC"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        app:layout_constraintTop_toBottomOf="@+id/textCrono"
+        android:layout_marginStart="15dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <ProgressBar
+        android:id="@+id/pbCount"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/reciEjerRunC"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/pbTimer"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:rotation="-90"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:background="@drawable/toggle_bar_orange"
+        android:progressDrawable="@drawable/gray_progress_bar">
+
+    </ProgressBar>
+
+
     <Chronometer
         android:id="@+id/cronometro"
         android:layout_width="200dp"
-        android:layout_height="120dp"
-        app:layout_constraintTop_toBottomOf="@+id/textCrono"
+        android:layout_height="wrap_content"
+        android:paddingVertical="75dp"
+        app:layout_constraintTop_toBottomOf="@+id/reciEjerRunC"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/pbCount"
         android:textColor="@color/orange_icons"
         android:textSize="25sp"
         android:textAlignment="center"
@@ -30,58 +64,82 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large">
 
     </Chronometer>
+    <TextView
+        android:id="@+id/txtCroRu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cronometro para la rutina"
+        app:layout_constraintTop_toBottomOf="@+id/pbCount"
+        app:layout_constraintEnd_toStartOf="@+id/txtCroDes"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/txtCroDes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/pbTimer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtCroRu"
+        android:text="Cronometro para descanso">
+
+    </TextView>
 
     <Button
+
         android:id="@+id/btnCronometro"
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:text="@string/StartRutina"
         android:backgroundTint="@color/orange_icons"
-        app:layout_constraintTop_toBottomOf="@+id/cronometro"
+        app:layout_constraintTop_toBottomOf="@+id/txtCroDes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginVertical="10dp">
 
     </Button>
-<!--    <Button-->
-<!--        android:id="@+id/btnCronPause"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:text="Pausar"-->
-<!--        android:backgroundTint="@color/orange_icons"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnCronometro"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent">-->
-
-<!--    </Button>-->
-<!--    <Button-->
-<!--        android:id="@+id/btnCronFin"-->
-<!--        android:layout_width="300dp"-->
-<!--        android:layout_height="70dp"-->
-<!--        android:text="Finalizar"-->
-<!--        android:backgroundTint="@color/orange_icons"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnCronPause"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent">-->
-
-<!--    </Button>-->
-
-<!--    <TextClock-->
-<!--        android:layout_width="120dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/btnCronometro"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent">-->
-
-<!--    </TextClock>-->
-
-    <Chronometer
-        android:id="@+id/desCrono"
-        android:layout_width="200dp"
+    <Button
+        android:id="@+id/btnTerminar"
+        android:layout_width="300dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toBottomOf="@+id/btnCronometro"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:text="Finalizar Rutina"
+        android:backgroundTint="@color/grey_low"
+        >
+
+    </Button>
+
+    <ProgressBar
+        android:id="@+id/pbTimer"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/reciEjerRunC"
+        app:layout_constraintStart_toEndOf="@+id/pbCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:rotation="-90"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:background="@drawable/gray_progress_bar"
+        android:progressDrawable="@drawable/toggle_bar_orange">
+    </ProgressBar>
+
+    <Chronometer
+        android:id="@+id/desCrono"
+        android:paddingVertical="75dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/reciEjerRunC"
+        app:layout_constraintStart_toStartOf="@+id/pbTimer"
+        app:layout_constraintEnd_toEndOf="parent"
         android:textAlignment="center"
+        android:textColor="@color/grey_low"
         android:textSize="25sp"
         android:gravity="center">
         </Chronometer>

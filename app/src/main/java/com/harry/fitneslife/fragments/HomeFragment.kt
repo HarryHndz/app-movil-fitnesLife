@@ -14,10 +14,12 @@ import com.harry.fitneslife.adapter.HomeAdaptaer
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.FragmentHomeBinding
 import com.harry.fitneslife.funAndClass.ListBox
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+    val listCarru = mutableListOf<CarouselItem>()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,6 +31,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         NavegarBoton()
         initComponent()
+        aggImage()
     }
 
     fun initComponent(){
@@ -43,6 +46,29 @@ class HomeFragment : Fragment() {
         binding.btnMoreRutina.setOnClickListener {
             findNavController().navigate(R.id.action_navInicio_to_navRutinas)
         }
+    }
+
+    fun aggImage(){
+        listCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.carru1,
+                caption = "Comienza a entrenar tu cuerpo"
+            )
+        )
+        listCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.carru2,
+                caption = "Empieza con barra o mancuernas"
+            )
+        )
+        listCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.carru3,
+                caption = "Encuentra las mejores rutinas para ti"
+            )
+        )
+
+        binding.carrusel?.setData(listCarru)
     }
 
 

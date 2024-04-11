@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -24,6 +25,7 @@ class RoutineIntermedioFragment : Fragment() {
     private lateinit var dbrefRutinas : DatabaseReference
     private lateinit var listRutinaEjer : ArrayList<ExerciseResponse>
     private lateinit var ejercicioAdapter: IntermedioAdapter
+    private val tipoRutina : String = "intermedio"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,6 +48,10 @@ class RoutineIntermedioFragment : Fragment() {
         )
         binding.listRutinaEjer.adapter= ejercicioAdapter
         getRutinaEjer()
+
+        binding.btnEmpezarRut.setOnClickListener {
+            findNavController().navigate(RoutineIntermedioFragmentDirections.actionRoutineIntermedioToCronometroRutinaFragment(nombreEjercicio = tipoRutina))
+        }
     }
 
     private fun getRutinaEjer() {

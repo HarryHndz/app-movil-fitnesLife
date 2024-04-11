@@ -27,6 +27,8 @@ class RoutinePrincipianteFragment : Fragment() {
     private lateinit var dbrefRutinas : DatabaseReference
     private lateinit var listRutinaEjer : ArrayList<ExerciseResponse>
     private lateinit var ejercicioAdapter: PrincipianteAdapter
+
+    private val tipoRutina : String = "principiante"
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,7 +53,7 @@ class RoutinePrincipianteFragment : Fragment() {
         getRutinaEjercicio()
 
         binding.btnEmpezarRut.setOnClickListener {
-            findNavController().navigate(R.id.action_routinePrincipiante_to_cronometroRutinaFragment)
+            findNavController().navigate(RoutinePrincipianteFragmentDirections.actionRoutinePrincipianteToCronometroRutinaFragment(nombreEjercicio = tipoRutina))
         }
     }
 

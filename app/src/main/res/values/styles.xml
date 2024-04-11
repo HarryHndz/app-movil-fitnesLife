@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:searchIcon">@color/background_app</item>
+        <item name="android:closeIcon">@color/background_app</item>
+    </style>
+</resources>

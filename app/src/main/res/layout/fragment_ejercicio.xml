@@ -5,13 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".fragments.EjercicioFragment"
     android:orientation="vertical"
-    android:background="@color/grey_low">
+    android:background="@color/background_app">
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/buscador"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_marginBottom="25dp">
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/buscador"
+        android:layout_margin="10dp">
 
     </androidx.appcompat.widget.SearchView>
 

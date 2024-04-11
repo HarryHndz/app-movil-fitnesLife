@@ -96,12 +96,20 @@
         android:id="@+id/routineAvanzado"
         android:name="com.harry.fitneslife.fragments.RoutineAvanzadoFragment"
         android:label=""
-        tools:layout="@layout/fragment_routine_avanzado" />
+        tools:layout="@layout/fragment_routine_avanzado" >
+        <action
+            android:id="@+id/action_routineAvanzado_to_cronometroRutinaFragment"
+            app:destination="@id/cronometroRutinaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/routineIntermedio"
         android:name="com.harry.fitneslife.fragments.RoutineIntermedioFragment"
         android:label=""
-        tools:layout="@layout/fragment_routine_intermedio" />
+        tools:layout="@layout/fragment_routine_intermedio" >
+        <action
+            android:id="@+id/action_routineIntermedio_to_cronometroRutinaFragment"
+            app:destination="@id/cronometroRutinaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/routinePrincipiante"
         android:name="com.harry.fitneslife.fragments.RoutinePrincipianteFragment"
@@ -125,5 +133,11 @@
         android:id="@+id/cronometroRutinaFragment"
         android:name="com.harry.fitneslife.fragments.CronometroRutinaFragment"
         android:label="fragment_cronometro_rutina"
-        tools:layout="@layout/fragment_cronometro_rutina" />
+        tools:layout="@layout/fragment_cronometro_rutina" >
+
+        <argument
+            android:name="nombreEjercicio"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>
