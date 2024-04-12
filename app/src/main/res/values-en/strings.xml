@@ -9,7 +9,7 @@
     <string name="title_rptPassword">Repeat your password:</string>
     <string name="title_logIn">Login</string>
     <string name="other">Or</string>
-    <string name="hint_input">this is editable text</string>
+    <string name="hint_input">This is editable text</string>
     <string name="home_welcome">Welcome!</string>
     <string name="home_title">Start your path in fitness life</string>
     <string name="title_card1_home">Explore</string>
@@ -44,11 +44,10 @@
 
     <string name="navigation_drawer_open">Open</string>
     <string name="navigation_drawer_close">Close</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="titleAlerts">Oops!, an error occurred</string>
-    <string name="btnConfirmar">Ok</string>
+    <string name="btnConfirmar">OK</string>
 
     <string name="completeCampos">There is no registration with that email</string>
     <string name="contaseñaIncorrecta">Incorrect password</string>
@@ -66,52 +65,56 @@
     <string name="body">Body</string>
 
 
-    <string name="male">Hombre</string>
-    <string name="female">Mujer</string>
-    <string name="height">Altura</string>
-    <string name="weight">Peso</string>
-    <string name="age">Edad</string>
-    <string name="calculate">Calcular</string>
-    <string name="result">Tu resultado</string>
+    <string name="male">Man</string>
+    <string name="female">Women</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="age">Age</string>
+    <string name="calculate">Calculate</string>
+    <string name="result">Your result</string>
     <string name="recalculate">Exit</string>
 
     <string name="error">Error</string>
-    <string name="title_bajo_peso">Bajo peso</string>
-    <string name="descripcion_bajo_peso">Estás por debajo de lo óptimo para tu peso y altura.</string>
-    <string name="title_peso_normal">Peso normal</string>
-    <string name="descripcion_peso_normal">Estás en lo óptimo para tu peso y altura.</string>
-    <string name="title_sobrepeso">Sobrepeso</string>
-    <string name="descripcion_sobrepeso">Estás por encima de lo óptimo para tu peso y altura.</string>
-    <string name="title_obesidad">Obesidad</string>
-    <string name="descripcion_obesidad">Estás muy por encima de lo óptimo para tu peso y altura.</string>
+    <string name="title_bajo_peso">Under weight</string>
+    <string name="descripcion_bajo_peso">You are below optimal for your weight and height.</string>
+    <string name="title_peso_normal">Normal weight</string>
+    <string name="descripcion_peso_normal">You are optimal for your weight and height.</string>
+    <string name="title_sobrepeso">Overweight</string>
+    <string name="descripcion_sobrepeso">You are above optimal for your weight and height.</string>
+    <string name="title_obesidad">Obesity</string>
+    <string name="descripcion_obesidad">You are well above optimal for your weight and height.</string>
 
-    <string name="nombre">Nombre del usuario</string>
-    <string name="correo">Correo electrónico</string>
-    <string name="imc">Indice de masa corporar(IMC)</string>
+    <string name="nombre">User</string>
+    <string name="correo">Email</string>
+    <string name="imc">BMI</string>
 
-    <string name="actualizar">Actualizar</string>
-    <string name="cancelar">Cancelar</string>
+    <string name="actualizar">Update</string>
+    <string name="cancelar">Cancel</string>
 
-    <string name="todoBien">Todo está correcto, digo yoo...</string>
+    <string name="todoBien">Everything is correct, I say…</string>
 
-    <string name="titleAlertsSuce">Operación exitosa</string>
+    <string name="titleAlertsSuce">Successful operation</string>
 
-    <string name="Personalizado">Tus rutinas perosonalizadas</string>
+    <string name="Personalizado">Your personalized routines</string>
 
-    <string name="titleDialogRutina">Crea tu nueva rutina</string>
-    <string name="titleEtRutina">Nombre de tu rutina</string>
-    <string name="titleBtnRutina">Crear rutina</string>
+    <string name="titleDialogRutina">Create your new routine</string>
+    <string name="titleEtRutina">Name of your routine</string>
+    <string name="titleBtnRutina">Create routine</string>
 
-    <string name="rutinasPersonalizadas">Tus rutinas personalizada</string>
+    <string name="rutinasPersonalizadas">Your personalized routines</string>
 
-    <string name="dataExist">Ya ha agregado este ejercicio</string>
+    <string name="dataExist">You have already added this exercise</string>
 
-    <string name="eliminar">Eliminar</string>
+    <string name="eliminar">Eliminate</string>
 
-    <string name="sesuroseguro">¿Estás seguro de querer eliminar el ejercicio?</string>
+    <string name="sesuroseguro">Are you sure you want to eliminate exercise?</string>
 
     <string name="AppName">FitnesLife</string>
 
-    <string name="confirmLog">¿Estás seguro de cerrar sesión?</string>
-
+    <string name="confirmLog">Are you sure to log out?</string>
+    <string name="StartRutina">Start Training</string>
+    <string name="StopRutina">Resume Routine</string>
+    <string name="image1">Start training your body</string>
+    <string name="image2">Start with barbell or dumbbells</string>
+    <string name="image3">Find the best routines for you</string>
 </resources>

@@ -74,6 +74,11 @@ class VistaPersonalizadaFragment : Fragment(), SearchView.OnQueryTextListener, a
     private fun initComponent() {
         listEjercicios.clear()
         listRutinaEjer.clear()
+
+        binding.btnEmpezarRut.setOnClickListener {
+            findNavController().navigate(VistaPersonalizadaFragmentDirections.actionVistaPersonalizadaFragmentToCronometroRutinaFragment(nombreEjercicio = args.itemId.toString()))
+        }
+
         ejercicioAdapter = EjerciciosPerAdapter(listRutinaEjer) { ejercicio ->
             onSelect(ejercicio)
         }

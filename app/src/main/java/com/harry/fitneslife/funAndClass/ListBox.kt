@@ -9,9 +9,9 @@ class ListBox{
 
         val carrusel = listOf<HomeBox>(
             HomeBox("Cardio" , R.drawable.ic_cardio),
-            HomeBox("Ejercicios",R.drawable.ic_exercise),
-            HomeBox("Rutinas",R.drawable.ic_routine),
-            HomeBox("Cuerpo",R.drawable.ic_body)
+            HomeBox("Exercises",R.drawable.ic_exercise),
+            HomeBox("Routines",R.drawable.ic_routine),
+            HomeBox("Body",R.drawable.ic_body)
         )
 
 
