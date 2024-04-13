@@ -94,20 +94,6 @@ class RutinaPersonalizadaFragment : Fragment(), OnItemClickListener {
 
         binding.rvEjerciciosPerso.adapter = EjerPerAdapter(dataListWithIDs, this)
 
-        /*val registro = rutinasPerso()
-
-        if (registro != null && registro.moveToFirst()) {
-            do {
-                val nombre = registro.getString(0)
-                listRutinas.add(nombre!!)
-            } while (registro.moveToNext())
-
-            binding.rvEjerciciosPerso.adapter = EjerPerAdapter(listRutinas)
-
-            
-        } else {
-
-        }*/
     }
 
     private fun rutinasPerso(): List<Personalizadas> {

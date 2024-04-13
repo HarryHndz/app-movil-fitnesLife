@@ -1,8 +1,10 @@
 package com.harry.fitneslife.fragments
 
+import android.database.Cursor
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.SystemClock
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -16,6 +18,9 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.harry.fitneslife.EjerciciosData.ExerciseResponse
 import com.harry.fitneslife.adapter.cronometro.CronometroAdapter
+import com.harry.fitneslife.baseDeDatos.SQLite
+import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife
+import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife.Companion.userData
 import com.harry.fitneslife.databinding.FragmentCronometroRutinaBinding
 
 class CronometroRutinaFragment : Fragment() {
@@ -49,8 +54,24 @@ class CronometroRutinaFragment : Fragment() {
         )
         bindig.reciEjerRunC.adapter =ejercicioAdapter
         val tipoRutinaEjer: String? = args.nombreEjercicio
+
         if (tipoRutinaEjer != null) {
-            getRutinaEjercicio(tipoRutinaEjer)
+            /*getRutinaEjercicio(tipoRutinaEjer)*/
+            if (getRutinaEjercicio(tipoRutinaEjer)) {
+                Log.i("Vamos", "Obtencion de rutinas correctas de firebase")
+            } else {
+                Log.i("Vamos", "Intento de hacerlo con sqlite")
+                val registro = getEjercicios(tipoRutinaEjer.toInt())
+
+                if (registro != null && registro.moveToFirst()) {
+                    do {
+                        val nombre = registro.getString(2)
+                        getEjerRu(nombre)
+                    } while (registro.moveToNext())
+
+
+                }
+            }
         }
         bindig.btnCronometro.setOnClickListener {
 
@@ -84,12 +105,68 @@ class CronometroRutinaFragment : Fragment() {
         }
     }
 
-    private fun getRutinaEjercicio(tipoRutinaEjer: String) {
-        dbrefRutinas = FirebaseDatabase.getInstance().reference.child("RutinasEjercicios").child(tipoRutinaEjer)
-        dbrefRutinas.addListenerForSingleValueEvent(object : ValueEventListener {
+    private fun getRutinaEjercicio(tipoRutinaEjer: String): Boolean {
+        if (tipoRutinaEjer.toIntOrNull() !=null) {
+            Log.i("vamos", "A ver que pasa $tipoRutinaEjer")
+            return false
+        } else {
+            dbrefRutinas = FirebaseDatabase.getInstance().reference.child("RutinasEjercicios").child(tipoRutinaEjer)
+            dbrefRutinas.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (snapshot in dataSnapshot.children) {
+                        val ejercicioKey = snapshot.key
+                        val dbrefEjercicio = ejercicioKey?.let {
+                            FirebaseDatabase.getInstance().reference.child("Ejercicio").child(
+                                it
+                            )
+                        }
+                        dbrefEjercicio?.addListenerForSingleValueEvent(object : ValueEventListener {
+                            override fun onDataChange(ejercicioSnapshot: DataSnapshot) {
+                                val ejerData = ejercicioSnapshot.getValue(ExerciseResponse::class.java)
+                                if (ejerData != null) {
+                                    listRutinaEjer.add(ejerData)
+                                    ejercicioAdapter.notifyDataSetChanged()
+                                }
+                            }
+                            override fun onCancelled(databaseError: DatabaseError) {
+                            }
+                        })
+                    }
+                }
+                override fun onCancelled(databaseError: DatabaseError) {
+                }
+            })
+        }
+        return true
+    }
+
+    private fun getEjercicios(id: Int): Cursor? {
+        val itemId = id
+        val idUser = userData.getId()
+        Log.i("Vamos", "Entro a sqlite")
+        val con = SQLite(requireContext(), "fitlife", null, 5)
+        val dataBase = con.writableDatabase
+        val consulta = dataBase.rawQuery( """
+            select * from ejercicios as ejer
+            inner join rutinasPer as rper on ejer.id_rutina = rper.id_rutina
+            where ejer.id_rutina = $itemId
+            and rper.user_id = $idUser
+        """.trimIndent(), null
+        )
+
+        return consulta
+
+        dataBase.close()
+    }
+
+    private fun getEjerRu(nombreRutina: String) {
+        dbrefRutinas = FirebaseDatabase.getInstance().reference.child("Ejercicio")
+        val query = dbrefRutinas.orderByChild("nombre").equalTo(nombreRutina)
+        query.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                for (snapshot in dataSnapshot.children) {
-                    val ejercicioKey = snapshot.key
+                for (rutinaSnapshot in dataSnapshot.children) {
+                    val ejercicioKey = rutinaSnapshot.key
+
                     val dbrefEjercicio = ejercicioKey?.let {
                         FirebaseDatabase.getInstance().reference.child("Ejercicio").child(
                             it
@@ -98,6 +175,7 @@ class CronometroRutinaFragment : Fragment() {
                     dbrefEjercicio?.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onDataChange(ejercicioSnapshot: DataSnapshot) {
                             val ejerData = ejercicioSnapshot.getValue(ExerciseResponse::class.java)
+
                             if (ejerData != null) {
                                 listRutinaEjer.add(ejerData)
                                 ejercicioAdapter.notifyDataSetChanged()

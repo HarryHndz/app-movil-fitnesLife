@@ -51,19 +51,19 @@ class HomeFragment : Fragment() {
         listCarru.add(
             CarouselItem(
                 imageDrawable = R.drawable.carru1,
-                caption = "Comienza a entrenar tu cuerpo"
+                caption = getString(R.string.image1)
             )
         )
         listCarru.add(
             CarouselItem(
                 imageDrawable = R.drawable.carru2,
-                caption = "Empieza con barra o mancuernas"
+                caption = getString(R.string.image2)
             )
         )
         listCarru.add(
             CarouselItem(
                 imageDrawable = R.drawable.carru3,
-                caption = "Encuentra las mejores rutinas para ti"
+                caption = getString(R.string.image3)
             )
         )
         binding.carrusel?.setData(listCarru)

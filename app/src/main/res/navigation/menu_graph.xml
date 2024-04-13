@@ -81,6 +81,9 @@
         <action
             android:id="@+id/action_vistaPersonalizadaFragment_to_actionRutinaPer"
             app:destination="@id/actionRutinaPer" />
+        <action
+            android:id="@+id/action_vistaPersonalizadaFragment_to_cronometroRutinaFragment"
+            app:destination="@id/cronometroRutinaFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailExerFragment"
@@ -132,7 +135,7 @@
     <fragment
         android:id="@+id/cronometroRutinaFragment"
         android:name="com.harry.fitneslife.fragments.CronometroRutinaFragment"
-        android:label="fragment_cronometro_rutina"
+        android:label=""
         tools:layout="@layout/fragment_cronometro_rutina" >
 
         <argument

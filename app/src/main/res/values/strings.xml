@@ -85,9 +85,9 @@
     <string name="title_obesidad">Obesidad</string>
     <string name="descripcion_obesidad">Estás muy por encima de lo óptimo para tu peso y altura.</string>
 
-    <string name="nombre">Nombre del usuario</string>
-    <string name="correo">Correo electrónico</string>
-    <string name="imc">Indice de masa corporar(IMC)</string>
+    <string name="nombre">Usuario</string>
+    <string name="correo">Correo</string>
+    <string name="imc">IMC</string>
 
     <string name="actualizar">Actualizar</string>
     <string name="cancelar">Cancelar</string>
@@ -115,4 +115,7 @@
     <string name="confirmLog">¿Estás seguro de cerrar sesión?</string>
     <string name="StartRutina">Comenzar Entrenamiento</string>
     <string name="StopRutina">Reanudar Rutina</string>
+    <string name="image1">Comienza a entrenar tu cuerpo</string>
+    <string name="image2">Empieza con barra o mancuernas</string>
+    <string name="image3">Encuentra las mejores rutinas para ti</string>
 </resources>
