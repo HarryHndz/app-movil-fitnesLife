@@ -18,9 +18,25 @@
             android:id="@+id/carrusel"
             android:layout_width="match_parent"
             android:layout_height="246dp"
+            app:carouselType="SHOWCASE"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:showBottomShadow="false"
+            app:showTopShadow="false"
+            app:showCaption="true"
+            app:captionTextSize="19sp"
+            app:showIndicator="true"
+            app:autoPlay="true"
+            app:autoPlayDelay="3000"
+            app:scalingFactor="0.15"
+            app:carouselBackground="@color/grey_components"
+            app:carouselGravity="CENTER"
+            app:scaleOnScroll="true"
+            app:autoWidthFixing="false"
+            app:infiniteCarousel="true"
+            app:imageScaleType="centerCrop"
+            >
 
         </org.imaginativeworld.whynotimagecarousel.ImageCarousel>
         <TextView

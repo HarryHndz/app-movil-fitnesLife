@@ -26,14 +26,12 @@ class HomeFragment : Fragment() {
     ): View? {
         _binding = FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         NavegarBoton()
         initComponent()
         aggImage()
     }
-
     fun initComponent(){
         binding.recicleHome.layoutManager = LinearLayoutManager(
             requireContext(),LinearLayoutManager.HORIZONTAL,false)
@@ -47,8 +45,9 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_navInicio_to_navRutinas)
         }
     }
-
     fun aggImage(){
+
+        listCarru.clear()
         listCarru.add(
             CarouselItem(
                 imageDrawable = R.drawable.carru1,
@@ -67,10 +66,7 @@ class HomeFragment : Fragment() {
                 caption = "Encuentra las mejores rutinas para ti"
             )
         )
-
         binding.carrusel?.setData(listCarru)
     }
-
-
 
 }
