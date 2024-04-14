@@ -127,4 +127,21 @@
     <string name="textBuscador">Encuentra El ejercicio Ideal Para Ti</string>
     <string name="dialogoFinalizar">¿Quieres Finalizar la rutina?</string>
     <string name="finalizarRutina">Finalizar Rutina</string>
+
+
+    <string name="titleDuracion">Duración:</string>
+    <string name="titleCalorias">Calorias a quemar:</string>
+    <string name="titlePeso">Peso recomendado:</string>
+    <string name="btnRutEmp">Empezar rutina</string>
+    <string name="titleListEjer">Lista de ejercicios</string>
+
+    <string name="titleRealizar">Ejercicios a realizar</string>
+    <string name="cronometroRutina">Cronometro para la rutina</string>
+    <string name="cronometroDescanso">Cronometro para descanso</string>
+    <string name="endRutina">Finalizar Rutina</string>
+
+    <string name="descripcionEjer">Descripción</string>
+    <string name="preparacionEjer">Preparacion:</string>
+    <string name="ejecucionEjer">Ejecución:</string>
+    <string name="detalles">Detalles:</string>
 </resources>

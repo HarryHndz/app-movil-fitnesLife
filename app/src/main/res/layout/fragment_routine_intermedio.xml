@@ -59,7 +59,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duracion:"
+                        android:text="@string/titleDuracion"
                         android:layout_gravity="center"
                         android:textColor="@color/white">
 
@@ -95,7 +95,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Calorias a quemar:"
+                        android:text="@string/titleCalorias"
                         android:lines="2"
                         android:textAlignment="center"
                         android:textColor="@color/white">
@@ -130,15 +130,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Peso recomendado:"
                         android:lines="2"
-                        android:textColor="@color/white"
-                        android:textAlignment="center">
+                        android:text="@string/titlePeso"
+                        android:textAlignment="center"
+                        android:textColor="@color/white">
 
                     </TextView>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -167,7 +169,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginHorizontal="20dp"
-            android:text="Empezar rutina"
+            android:text="@string/btnRutEmp"
             android:background="@drawable/btn_desing"
             android:layout_marginTop="15dp"
             android:textColor="@color/background_app">
@@ -180,7 +182,7 @@
             app:layout_constraintTop_toBottomOf="@+id/btnEmpezarRut"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:text="Listas de ejercicios"
+            android:text="@string/titleListEjer"
             android:layout_marginTop="40dp"
             android:textAlignment="center">
         </TextView>

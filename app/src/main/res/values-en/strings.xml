@@ -117,4 +117,29 @@
     <string name="image1">Start training your body</string>
     <string name="image2">Start with barbell or dumbbells</string>
     <string name="image3">Find the best routines for you</string>
+
+
+    <string name="Pecho">Chest</string>
+    <string name="Espalda">Back</string>
+    <string name="Pierna">Leg</string>
+    <string name="Abdomen">Abdomen</string>
+    <string name="textBuscador">Find the ideal exercise for you</string>
+    <string name="dialogoFinalizar">¿Do you want to finish the routine?</string>
+    <string name="finalizarRutina">End routine</string>
+
+    <string name="titleDuracion">Time:</string>
+    <string name="titleCalorias">Calories to burn:</string>
+    <string name="titlePeso">Recommended weight:</string>
+    <string name="btnRutEmp">Start routine</string>
+    <string name="titleListEjer">Exercise list</string>
+
+    <string name="titleRealizar">Exercises to do</string>
+    <string name="cronometroRutina">Routine stopwatch</string>
+    <string name="cronometroDescanso">Break timer</string>
+    <string name="endRutina">End routine</string>
+
+    <string name="descripcionEjer">Preparation:</string>
+    <string name="preparacionEjer">Preparacion:</string>
+    <string name="ejecucionEjer">Execution:</string>
+    <string name="detalles">Details:</string>
 </resources>
