@@ -138,8 +138,12 @@
     <string name="cronometroDescanso">Break timer</string>
     <string name="endRutina">End routine</string>
 
-    <string name="descripcionEjer">Preparation:</string>
+    <string name="descripcionEjer">Description:</string>
     <string name="preparacionEjer">Preparacion:</string>
     <string name="ejecucionEjer">Execution:</string>
     <string name="detalles">Details:</string>
+
+    <string name="rutinaAvanzado">Routine For Advanced</string>
+    <string name="rutinaIntermedio">Routine for Intermediates</string>
+    <string name="rutinaPrincipiante">Routine for Beginners</string>
 </resources>

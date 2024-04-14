@@ -21,6 +21,15 @@
             app:layout_constraintBottom_toTopOf="@+id/detallesRutina"
             android:background="@color/grey_components"
             android:paddingVertical="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/rutinaPrincipiante"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="25sp">
+
+            </TextView>
 
         </LinearLayout>
 

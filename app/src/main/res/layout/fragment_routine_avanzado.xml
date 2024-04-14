@@ -27,7 +27,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rutina Para Avanzados"
+                android:text="@string/rutinaAvanzado"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="25sp">

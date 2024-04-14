@@ -140,8 +140,11 @@
     <string name="cronometroDescanso">Cronometro para descanso</string>
     <string name="endRutina">Finalizar Rutina</string>
 
-    <string name="descripcionEjer">Descripción</string>
+    <string name="descripcionEjer">Descripción:</string>
     <string name="preparacionEjer">Preparacion:</string>
     <string name="ejecucionEjer">Ejecución:</string>
     <string name="detalles">Detalles:</string>
+    <string name="rutinaAvanzado">Rutina Para Avanzados</string>
+    <string name="rutinaIntermedio">Rutina para Intermedios</string>
+    <string name="rutinaPrincipiante">Rutina para Principiantes</string>
 </resources>
