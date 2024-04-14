@@ -1,5 +1,6 @@
 package com.harry.fitneslife.fragments
 
+import android.app.Dialog
 import android.database.Cursor
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,6 +10,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageButton
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.DataSnapshot
@@ -17,6 +21,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.harry.fitneslife.EjerciciosData.ExerciseResponse
+import com.harry.fitneslife.R
 import com.harry.fitneslife.adapter.cronometro.CronometroAdapter
 import com.harry.fitneslife.baseDeDatos.SQLite
 import com.harry.fitneslife.baseDeDatos.UserViewFitnexLife
@@ -46,6 +51,7 @@ class CronometroRutinaFragment : Fragment() {
         listRutinaEjer = arrayListOf()
 
         init()
+        finalizarRutina()
     }
     private fun init() {
         ejercicioAdapter = CronometroAdapter(listRutinaEjer)
@@ -197,5 +203,32 @@ class CronometroRutinaFragment : Fragment() {
             countDownTimer.cancel()
         }
         _binding = null
+    }
+
+    private fun finalizarRutina(){
+        bindig.btnTerminar.setOnClickListener {
+            showDialog()
+        }
+    }
+
+    private fun showDialog() {
+        val dialog = Dialog(requireContext())
+        dialog.show()
+        dialog.setContentView(R.layout.dialogo_final_rutina)
+        val btnFinalizar : Button =dialog.findViewById(R.id.btnFinalizar)
+        val  btnCancelar: ImageButton = dialog.findViewById(R.id.btnCancelar)
+        btnFinalizar.setOnClickListener {
+            if (::countDownTimer.isInitialized) {
+                countDownTimer.cancel()
+            }
+            bindig.cronometro.stop()
+            findNavController().navigate(R.id.action_cronometroRutinaFragment_to_navRutinas)
+            dialog.hide()
+
+        }
+        btnCancelar.setOnClickListener {
+            dialog.cancel()
+        }
+
     }
 }

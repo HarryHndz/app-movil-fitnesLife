@@ -142,5 +142,8 @@
             android:name="nombreEjercicio"
             app:argType="string"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_cronometroRutinaFragment_to_navRutinas"
+            app:destination="@id/navRutinas" />
     </fragment>
 </navigation>

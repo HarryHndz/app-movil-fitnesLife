@@ -20,6 +20,7 @@ import com.harry.fitneslife.EjerciciosData.ExerciseResponse
 import com.harry.fitneslife.R
 import com.harry.fitneslife.adapter.ExerciseAdapter
 import com.harry.fitneslife.databinding.FragmentEjercicioBinding
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 
 class EjercicioFragment : Fragment(), SearchView.OnQueryTextListener {
@@ -28,6 +29,7 @@ class EjercicioFragment : Fragment(), SearchView.OnQueryTextListener {
     private lateinit var listEjercicios : ArrayList<ExerciseResponse>
     private var _bindig : FragmentEjercicioBinding? = null
     private lateinit var myAdapter : ExerciseAdapter
+    val listaCarru = mutableListOf<CarouselItem>()
     private val binding get() = _bindig!!
 
     override fun onCreateView(
@@ -54,6 +56,8 @@ class EjercicioFragment : Fragment(), SearchView.OnQueryTextListener {
             onSelectEjercicio(ejercicio)
         }
         binding.recycleEjercicios.adapter  = myAdapter
+
+        aggImagen()
     }
     private fun getDataEjercicio(query: String){
         dbref = FirebaseDatabase.getInstance().getReference("Ejercicio")
@@ -116,5 +120,35 @@ class EjercicioFragment : Fragment(), SearchView.OnQueryTextListener {
     override fun onQueryTextChange(newText: String?): Boolean {
         newText?.let { filterData(it) }
         return true
+    }
+
+    fun aggImagen(){
+        listaCarru.clear()
+        listaCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.ejer_abdomen,
+                caption = getString(R.string.Abdomen)
+            )
+        )
+        listaCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.ejer_espalda,
+                caption = getString(R.string.Espalda)
+            )
+        )
+        listaCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.ejer_pechojpg,
+                caption = getString(R.string.Pecho)
+            )
+        )
+        listaCarru.add(
+            CarouselItem(
+                imageDrawable = R.drawable.ejer_pierna,
+                caption = getString(R.string.Pierna)
+            )
+        )
+
+        binding.carrusel.setData(listaCarru)
     }
 }

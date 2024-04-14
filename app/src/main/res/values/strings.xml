@@ -118,4 +118,13 @@
     <string name="image1">Comienza a entrenar tu cuerpo</string>
     <string name="image2">Empieza con barra o mancuernas</string>
     <string name="image3">Encuentra las mejores rutinas para ti</string>
+    
+    
+    <string name="Pecho">Pecho</string>
+    <string name="Espalda">Espalda</string>
+    <string name="Pierna">Pierna</string>
+    <string name="Abdomen">Abdomen</string>
+    <string name="textBuscador">Encuentra El ejercicio Ideal Para Ti</string>
+    <string name="dialogoFinalizar">¿Quieres Finalizar la rutina?</string>
+    <string name="finalizarRutina">Finalizar Rutina</string>
 </resources>

@@ -1,29 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.EjercicioFragment"
-    android:orientation="vertical"
-    android:background="@color/background_app">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/buscador"
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/buscador"
-        android:layout_margin="10dp">
+        android:layout_height="match_parent">
 
-    </androidx.appcompat.widget.SearchView>
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/buscador"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="25dp"
+            android:background="@drawable/buscador"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+        </androidx.appcompat.widget.SearchView>
+
+        <TextView
+            android:id="@+id/textoBus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/textBuscador"
+            app:layout_constraintTop_toBottomOf="@+id/buscador"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textAlignment="center"
+            android:layout_marginVertical="10dp"
+            android:textColor="@color/grey_components"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+            android:layout_marginHorizontal="15dp"
+            android:id="@+id/carrusel"
+            app:layout_constraintTop_toBottomOf="@+id/textoBus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:showBottomShadow="false"
+            app:showTopShadow="false"
+            app:showCaption="true"
+            app:captionTextSize="19sp"
+            app:showIndicator="true"
+            app:carouselBackground="@drawable/corner_view"
+            app:showNavigationButtons="false"
+            app:autoPlay="true"
+            app:autoPlayDelay="2000"
+            app:scalingFactor="0.15"
+            app:scaleOnScroll="true"
+            app:autoWidthFixing="false"
+            app:infiniteCarousel="true"
+            app:imageScaleType="centerCrop"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/corner_view"
+            >
+
+        </org.imaginativeworld.whynotimagecarousel.ImageCarousel>
 
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleEjercicios"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp">
+        <androidx.recyclerview.widget.RecyclerView
+            app:layout_constraintTop_toBottomOf="@+id/carrusel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/recycleEjercicios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        </androidx.recyclerview.widget.RecyclerView>
 
-</LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</ScrollView>
